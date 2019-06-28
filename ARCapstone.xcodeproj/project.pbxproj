@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		960057CC22C584020006965D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057CB22C584020006965D /* AppDelegate.swift */; };
 		960057CE22C584020006965D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 960057CD22C584020006965D /* art.scnassets */; };
-		960057D022C584020006965D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057CF22C584020006965D /* ViewController.swift */; };
+		960057D022C584020006965D /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057CF22C584020006965D /* ARViewController.swift */; };
 		960057D322C584020006965D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960057D122C584020006965D /* Main.storyboard */; };
 		960057D522C584040006965D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960057D422C584040006965D /* Assets.xcassets */; };
 		960057D822C584040006965D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960057D622C584040006965D /* LaunchScreen.storyboard */; };
 		960057E322C584040006965D /* ARCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057E222C584040006965D /* ARCapstoneTests.swift */; };
 		960057EE22C584040006965D /* ARCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057ED22C584040006965D /* ARCapstoneUITests.swift */; };
+		960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FD22C6794A0006965D /* ImageInformationViewController.swift */; };
+		9600580022C67C6E0006965D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FF22C67C6E0006965D /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		960057C822C584020006965D /* ARCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		960057C822C584020006965D /* scavengARt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scavengARt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		960057CB22C584020006965D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		960057CD22C584020006965D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		960057CF22C584020006965D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		960057CF22C584020006965D /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		960057D222C584020006965D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		960057D422C584040006965D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		960057D722C584040006965D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		960057E922C584040006965D /* ARCapstoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARCapstoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		960057ED22C584040006965D /* ARCapstoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCapstoneUITests.swift; sourceTree = "<group>"; };
 		960057EF22C584040006965D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		960057FD22C6794A0006965D /* ImageInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInformationViewController.swift; sourceTree = "<group>"; };
+		960057FF22C67C6E0006965D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,7 @@
 		960057C922C584020006965D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				960057C822C584020006965D /* ARCapstone.app */,
+				960057C822C584020006965D /* scavengARt.app */,
 				960057DE22C584040006965D /* ARCapstoneTests.xctest */,
 				960057E922C584040006965D /* ARCapstoneUITests.xctest */,
 			);
@@ -101,8 +105,10 @@
 			children = (
 				960057CB22C584020006965D /* AppDelegate.swift */,
 				960057CD22C584020006965D /* art.scnassets */,
-				960057CF22C584020006965D /* ViewController.swift */,
+				960057CF22C584020006965D /* ARViewController.swift */,
+				960057FF22C67C6E0006965D /* HomeViewController.swift */,
 				960057D122C584020006965D /* Main.storyboard */,
+				960057FD22C6794A0006965D /* ImageInformationViewController.swift */,
 				960057D422C584040006965D /* Assets.xcassets */,
 				960057D622C584040006965D /* LaunchScreen.storyboard */,
 				960057D922C584040006965D /* Info.plist */,
@@ -131,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		960057C722C584020006965D /* ARCapstone */ = {
+		960057C722C584020006965D /* scavengARt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 960057F222C584040006965D /* Build configuration list for PBXNativeTarget "ARCapstone" */;
+			buildConfigurationList = 960057F222C584040006965D /* Build configuration list for PBXNativeTarget "scavengARt" */;
 			buildPhases = (
 				960057C422C584020006965D /* Sources */,
 				960057C522C584020006965D /* Frameworks */,
@@ -143,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = ARCapstone;
+			name = scavengARt;
 			productName = ARCapstone;
-			productReference = 960057C822C584020006965D /* ARCapstone.app */;
+			productReference = 960057C822C584020006965D /* scavengARt.app */;
 			productType = "com.apple.product-type.application";
 		};
 		960057DD22C584040006965D /* ARCapstoneTests */ = {
@@ -220,7 +226,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				960057C722C584020006965D /* ARCapstone */,
+				960057C722C584020006965D /* scavengARt */,
 				960057DD22C584040006965D /* ARCapstoneTests */,
 				960057E822C584040006965D /* ARCapstoneUITests */,
 			);
@@ -260,8 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				960057D022C584020006965D /* ViewController.swift in Sources */,
+				960057D022C584020006965D /* ARViewController.swift in Sources */,
+				960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */,
 				960057CC22C584020006965D /* AppDelegate.swift in Sources */,
+				9600580022C67C6E0006965D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,12 +294,12 @@
 /* Begin PBXTargetDependency section */
 		960057E022C584040006965D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 960057C722C584020006965D /* ARCapstone */;
+			target = 960057C722C584020006965D /* scavengARt */;
 			targetProxy = 960057DF22C584040006965D /* PBXContainerItemProxy */;
 		};
 		960057EB22C584040006965D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 960057C722C584020006965D /* ARCapstone */;
+			target = 960057C722C584020006965D /* scavengARt */;
 			targetProxy = 960057EA22C584040006965D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -562,7 +570,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		960057F222C584040006965D /* Build configuration list for PBXNativeTarget "ARCapstone" */ = {
+		960057F222C584040006965D /* Build configuration list for PBXNativeTarget "scavengARt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				960057F322C584040006965D /* Debug */,
