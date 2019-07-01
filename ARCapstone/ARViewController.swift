@@ -17,13 +17,12 @@ struct ImageInformation {
     let image: UIImage
 }
 
-
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
-    var selectedImage : ImageInformation?
+    var selectedImage : [Paintings]?
     
-    let images = ["mdmX" : ImageInformation(name: "Madame X", description: "Portrait of Madame X is the title of a portrait painting by John Singer Sargent of a young socialite, Virginie Amélie Avegno Gautreau, wife of the French banker Pierre Gautreau. Madame X was painted not as a commission, but at the request of Sargent. It is a study in opposition. Sargent shows a woman posing in a black satin dress with jeweled straps, a dress that reveals and hides at the same time. The portrait is characterized by the pale flesh tone of the subject contrasted against a dark colored dress and background. The scandal resulting from the painting's controversial reception at the Paris Salon of 1884 amounted to a temporary set-back to Sargent while in France, though it may have helped him later establish a successful career in Britain and America.", image: UIImage(named: "ColormdmX")!)]
+    let images = ["Madame X" : ImageInformation(name: "Madame X", description: "Portrait of Madame X is the title of a portrait painting by John Singer Sargent of a young socialite, Virginie Amélie Avegno Gautreau, wife of the French banker Pierre Gautreau. Madame X was painted not as a commission, but at the request of Sargent. It is a study in opposition. Sargent shows a woman posing in a black satin dress with jeweled straps, a dress that reveals and hides at the same time. The portrait is characterized by the pale flesh tone of the subject contrasted against a dark colored dress and background. The scandal resulting from the painting's controversial reception at the Paris Salon of 1884 amounted to a temporary set-back to Sargent while in France, though it may have helped him later establish a successful career in Britain and America.", image: UIImage(named: "ColormdmX")!)]
     
     let captureSession = AVCaptureSession()
     var previewLayer: CALayer!
@@ -47,15 +46,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
 //         Set the scene to the view
         sceneView.scene = successScene
-        let configuration = ARWorldTrackingConfiguration()
-        
-        guard let arImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
-        
-        configuration.detectionImages = arImages
-        
-        // Run the view's session
-        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-        
+       
+        self.addReferences(media: arrOfArt)
+       
     }
     
 
@@ -67,61 +60,75 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
 
-    // MARK: - ARSCNViewDelegate
-    
-//    func view(_ view: ARSCNView, nodeFor anchor: ARAnchor) -> SKNode? {
-//        if let imageAnchor = anchor as? ARImageAnchor,
-//            let referenceImageName = imageAnchor.referenceImage.name,
-//            let scannedImage = self.images[referenceImageName] {
-//            self.selectedImage = scannedImage
-//
-//            self.performSegue(withIdentifier: "showImageInfo", sender: self)
-//
-//            return imageSeenMarker()
-//        }
-//        return nil
-//    }
-    
-//    private func imageSeenMarker() -> SKLabelNode {
-//        let labelNode = SKLabelNode(text: "✅")
-//        labelNode.horizontalAlignmentMode = .center
-//        labelNode.verticalAlignmentMode = .center
-//
-//        return labelNode
-//    }
+    func addReferences(media: [Paintings]) {
+        var imageSet = Set<ARReferenceImage>()
+        let imageFetchingGroup = DispatchGroup()
+        for medium in media {
+            
+            print("THIS IS MEDIUM:", medium)
+            
+            let name = medium.name
+            let imageUrl = medium.imageUrl
+            let url = URL(string: imageUrl)
+            let session = URLSession(configuration: .default)
+            
+            
+            imageFetchingGroup.enter()
+            let downloadPicTask = session.dataTask(with: url!) { (data, response, error) in
+                if let e = error {
+                    print("Error downloading picture: \(e)")
+                    imageFetchingGroup.leave()
+                }else {
+                    if let res = response as? HTTPURLResponse {
+                        print("Downloaded picture with response code \(res.statusCode)")
+                        if let imageData = data {
+                            let image = UIImage(data: imageData)!
+                            let arImage = ARReferenceImage(image.cgImage!, orientation: CGImagePropertyOrientation.up, physicalWidth: CGFloat(image.cgImage!.width) )
+                            arImage.name = name
+                            imageSet.insert(arImage)
+                            imageFetchingGroup.leave()
+                        }else {
+                            print("Couldn't get image: Image is nil")
+                            imageFetchingGroup.leave()
+                        }
+                    }else {
+                        print("Couldn't get response code")
+                        imageFetchingGroup.leave()
+                    }
+                }
+            }
+            downloadPicTask.resume()
+        }
+        self.configuration = ARWorldTrackingConfiguration()
+        imageFetchingGroup.notify(queue: .main) {
+            self.configuration.detectionImages = imageSet
+            self.sceneView.session.run(self.configuration)
+        }
+    }
+
     
 
     // Override to create and configure nodes for anchors added to the view's session.
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let imageAnchor = anchor as? ARImageAnchor,
-            let referenceImageName = imageAnchor.referenceImage.name,
-        let scannedImage = self.images[referenceImageName] {
+        let referenceImageName = imageAnchor.referenceImage.name {
+            let scannedImage = arrOfArt.filter({$0.name == referenceImageName})
             self.selectedImage = scannedImage
             self.performSegue(withIdentifier: "showImageInfo", sender: self)
-            guard let ship = sceneView.scene.rootNode.childNode(withName: "ship", recursively: false) else { return }
-            ship.removeFromParentNode()
-            node.addChildNode(ship)
-            ship.isHidden = false
-        
+            guard let thumb = sceneView.scene.rootNode.childNode(withName: "thumb", recursively: false) else { return }
+            thumb.removeFromParentNode()
+            node.addChildNode(thumb)
+            thumb.isHidden = false
         }
- 
-        
-        
-
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showImageInfo" {
             if let imageInformationVC = segue.destination as? ImageInformationViewController,
                 let actualSelectedImage = selectedImage {
-                imageInformationVC.imageInformation = actualSelectedImage
+                imageInformationVC.imageInformation = ImageInformation(name: "Madame X", description: "Portrait of Madame X is the title of a portrait painting by John Singer Sargent of a young socialite, Virginie Amélie Avegno Gautreau, wife of the French banker Pierre Gautreau. Madame X was painted not as a commission, but at the request of Sargent. It is a study in opposition. Sargent shows a woman posing in a black satin dress with jeweled straps, a dress that reveals and hides at the same time. The portrait is characterized by the pale flesh tone of the subject contrasted against a dark colored dress and background. The scandal resulting from the painting's controversial reception at the Paris Salon of 1884 amounted to a temporary set-back to Sargent while in France, though it may have helped him later establish a successful career in Britain and America.", image: UIImage(named: "ColormdmX")!)
             }
         }
     }
 
-    
-//    @IBAction func imageCapture(_ sender: Any, forEvent event: UIEvent) {
-//
-//    }
 }

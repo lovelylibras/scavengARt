@@ -106,8 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				960057CB22C584020006965D /* AppDelegate.swift */,
+				72D1237022CA625000646B8B /* MuseumViewViewController.swift */,
+
 
 				7253D9DF22C9AEDA003E32B6 /* HuntPaintingsAPI.swift */,
+
 
 				960057CF22C584020006965D /* ARViewController.swift */,
 				960057FF22C67C6E0006965D /* HomeViewController.swift */,

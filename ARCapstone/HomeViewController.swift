@@ -20,12 +20,17 @@ struct Paintings: Decodable {
     let imageUrl:String
 }
 
+var arrOfArt: [Paintings] = []
+
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let jsonUrlString = "http://localhost:1337/api/hunt/1"
+
+        
+        let jsonUrlString = "http://scavengart.herokuapp.com/api/hunt/\(museum)"
+
         guard let url = URL(string: jsonUrlString) else {
             return }
         
@@ -34,23 +39,16 @@ class HomeViewController: UIViewController {
             guard let data = data else { return }
             do {
                 let hunt = try JSONDecoder().decode(Hunt.self, from: data)
-                print(hunt.paintings[0].imageUrl)
+                for i in hunt.paintings {
+                    arrOfArt.append(i)
+                }
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)
             }
-            
+            print(arrOfArt)
+
         }.resume()
         // Do any additional setup after loading the view.
         
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     }
 }
