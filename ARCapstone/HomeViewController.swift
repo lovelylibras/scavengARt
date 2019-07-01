@@ -20,12 +20,18 @@ struct Paintings: Decodable {
     let imageUrl:String
 }
 
+struct Museum {
+    let museum: String
+}
+
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let jsonUrlString = "http://localhost:1337/api/hunt/1"
+        var arrOfImage: [String] = []
+        
+        let jsonUrlString = "http://localhost:1337/api/hunt/\(museum)"
         guard let url = URL(string: jsonUrlString) else {
             return }
         
@@ -34,11 +40,13 @@ class HomeViewController: UIViewController {
             guard let data = data else { return }
             do {
                 let hunt = try JSONDecoder().decode(Hunt.self, from: data)
-                print(hunt.paintings[0].imageUrl)
+                for i in hunt.paintings {
+                    arrOfImage.append(i.imageUrl)
+                }
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)
             }
-            
+            print(arrOfImage)
         }.resume()
         // Do any additional setup after loading the view.
         
