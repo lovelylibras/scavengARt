@@ -8,14 +8,40 @@
 
 import UIKit
 
+struct Hunt: Decodable {
+    let name:String
+    let description:String
+    let paintings:[Paintings]
+}
+
+struct Paintings: Decodable {
+    let name:String
+    let artist:String
+    let imageUrl:String
+}
+
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let jsonUrlString = "http://localhost:1337/api/hunt/1"
+        guard let url = URL(string: jsonUrlString) else {
+            return }
+        
+        URLSession.shared.dataTask(with: url) {
+            (data, response, err) in
+            guard let data = data else { return }
+            do {
+                let hunt = try JSONDecoder().decode(Hunt.self, from: data)
+                print(hunt.paintings[0].imageUrl)
+            } catch let jsonErr {
+                print("Error serializing json", jsonErr)
+            }
+            
+        }.resume()
         // Do any additional setup after loading the view.
-    }
-    
+        
 
     /*
     // MARK: - Navigation
@@ -26,5 +52,5 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    }
 }
