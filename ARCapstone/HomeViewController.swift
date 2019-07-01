@@ -19,6 +19,7 @@ struct Paintings: Decodable {
     let artist:String
     let imageUrl:String
 }
+var arrOfImage: [String] = []
 
 class HomeViewController: UIViewController {
 
@@ -34,7 +35,10 @@ class HomeViewController: UIViewController {
             guard let data = data else { return }
             do {
                 let hunt = try JSONDecoder().decode(Hunt.self, from: data)
-                print(hunt.paintings[0].imageUrl)
+                for i in hunt.paintings {
+                    arrOfImage.append(i.imageUrl)
+                }
+                print(arrOfImage)
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)
             }
