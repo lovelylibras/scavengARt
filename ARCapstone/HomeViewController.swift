@@ -19,6 +19,7 @@ struct Paintings: Decodable {
     let artist:String
     let imageUrl:String
 }
+var arrOfImage: [String] = []
 
 struct Museum {
     let museum: String
@@ -43,6 +44,7 @@ class HomeViewController: UIViewController {
                 for i in hunt.paintings {
                     arrOfImage.append(i.imageUrl)
                 }
+
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)
             }
