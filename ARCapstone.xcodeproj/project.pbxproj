@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7253D9E022C9AEDA003E32B6 /* HuntPaintingsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7253D9DF22C9AEDA003E32B6 /* HuntPaintingsAPI.swift */; };
+		72D1237122CA625000646B8B /* MuseumViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D1237022CA625000646B8B /* MuseumViewViewController.swift */; };
 		960057CC22C584020006965D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057CB22C584020006965D /* AppDelegate.swift */; };
 		960057CE22C584020006965D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 960057CD22C584020006965D /* art.scnassets */; };
 		960057D022C584020006965D /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057CF22C584020006965D /* ARViewController.swift */; };
@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7253D9DF22C9AEDA003E32B6 /* HuntPaintingsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntPaintingsAPI.swift; sourceTree = "<group>"; };
+		72D1237022CA625000646B8B /* MuseumViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumViewViewController.swift; sourceTree = "<group>"; };
 		960057C822C584020006965D /* scavengARt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scavengARt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		960057CB22C584020006965D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		960057CD22C584020006965D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -106,9 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				960057CB22C584020006965D /* AppDelegate.swift */,
-
-				7253D9DF22C9AEDA003E32B6 /* HuntPaintingsAPI.swift */,
-
+				72D1237022CA625000646B8B /* MuseumViewViewController.swift */,
 				960057CF22C584020006965D /* ARViewController.swift */,
 				960057FF22C67C6E0006965D /* HomeViewController.swift */,
 				960057FD22C6794A0006965D /* ImageInformationViewController.swift */,
@@ -272,9 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				960057D022C584020006965D /* ARViewController.swift in Sources */,
+				72D1237122CA625000646B8B /* MuseumViewViewController.swift in Sources */,
 				960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */,
 				960057CC22C584020006965D /* AppDelegate.swift in Sources */,
-				7253D9E022C9AEDA003E32B6 /* HuntPaintingsAPI.swift in Sources */,
 				9600580022C67C6E0006965D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
