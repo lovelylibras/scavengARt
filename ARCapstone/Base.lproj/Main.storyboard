@@ -172,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="1145" y="-498"/>
         </scene>
-        <!--View Controller-->
+        <!--Museum View View Controller-->
         <scene sceneID="Z2Q-NI-2FB">
             <objects>
-                <viewController id="Zv6-X4-vCx" sceneMemberID="viewController">
+                <viewController id="Zv6-X4-vCx" customClass="MuseumViewViewController" customModule="scavengARt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="obw-BU-yxF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,6 +200,7 @@
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
+                                    <action selector="TheMet:" destination="Zv6-X4-vCx" eventType="touchUpInside" id="Wt5-Xm-CSk"/>
                                     <segue destination="Osa-Cn-tck" kind="show" id="yxH-ik-7b4"/>
                                 </connections>
                             </button>
@@ -211,6 +212,7 @@
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
+                                    <action selector="MOMA:" destination="Zv6-X4-vCx" eventType="touchUpInside" id="K9T-N1-1nJ"/>
                                     <segue destination="Osa-Cn-tck" kind="show" id="kYr-ol-WAn"/>
                                 </connections>
                             </button>
@@ -222,6 +224,7 @@
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
+                                    <action selector="TheWhitney:" destination="Zv6-X4-vCx" eventType="touchUpInside" id="sYA-RV-gfl"/>
                                     <segue destination="Osa-Cn-tck" kind="show" id="ju6-Hq-UXz"/>
                                 </connections>
                             </button>
