@@ -42,11 +42,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
 //         Create a new scene
-        let shipScene = SCNScene(named: "art.scnassets/ship.scn")!
+        let successScene = SCNScene(named: "art.scnassets/success.scn")!
         
         
 //         Set the scene to the view
-        sceneView.scene = shipScene
+        sceneView.scene = successScene
         let configuration = ARWorldTrackingConfiguration()
         
         guard let arImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
@@ -59,7 +59,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
