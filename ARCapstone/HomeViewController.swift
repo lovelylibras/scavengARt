@@ -25,14 +25,15 @@ struct Museum {
     let museum: String
 }
 
+var arrOfArt: [Paintings] = []
+
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var arrOfImage: [String] = []
         
-        let jsonUrlString = "http://localhost:1337/api/hunt/\(museum)"
+        let jsonUrlString = "http://scavengart.herokuapp.com/api/hunt/\(museum)"
         guard let url = URL(string: jsonUrlString) else {
             return }
         
@@ -42,13 +43,12 @@ class HomeViewController: UIViewController {
             do {
                 let hunt = try JSONDecoder().decode(Hunt.self, from: data)
                 for i in hunt.paintings {
-                    arrOfImage.append(i.imageUrl)
+                    arrOfArt.append(i)
                 }
-
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)
             }
-            print(arrOfImage)
+            print(arrOfArt)
         }.resume()
         // Do any additional setup after loading the view.
         
