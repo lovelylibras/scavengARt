@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  ARCapstone
-//
-//  Created by Audra Kenney on 6/27/19.
-//  Copyright © 2019 Audra Kenney. All rights reserved.
-//
+/
 
 import UIKit
 
