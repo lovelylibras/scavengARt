@@ -11,24 +11,26 @@ import UIKit
 class ImageInformationViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var infoText: UITextView!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var descLabel: UITextField!
     
-    var imageInformation : ImageInformation?
+    var imageInformation : [Paintings]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
         
         if let actualImageInformation = imageInformation {
-            self.nameLabel.text = actualImageInformation.name
-            self.imageView.image = actualImageInformation.image
-            self.infoText.text = actualImageInformation.description
+            self.imageView.image = images[actualImageInformation[0].name]
+            self.nameLabel.text = actualImageInformation[0].name
+            self.artistLabel.text = actualImageInformation[0].artist
+            self.descLabel.text = actualImageInformation[0].description
         }
-        print(imageInformation)
+     
     }
     
     @IBAction func closeModal(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    
     }
     
     
