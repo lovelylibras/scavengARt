@@ -5,6 +5,8 @@ import AVFoundation
 
 //global variables
 var images : [String: UIImage] = [:]
+var visitedNames : [String] = []
+var visitedImages : [UIImage] = []
 
 class ViewController: UIViewController, ARSCNViewDelegate {
     var configuration = ARWorldTrackingConfiguration()
@@ -27,14 +29,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //         Create a new scene
         let successScene = SCNScene(named: "art.scnassets/success.scn")!
         
-        
 //         Set the scene to the view
         sceneView.scene = successScene
        
         self.addReferences(media: arrOfArt)
        
     }
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -43,7 +43,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
-
     func addReferences(media: [Paintings]) {
         var imageSet = Set<ARReferenceImage>()
         let imageFetchingGroup = DispatchGroup()
@@ -99,7 +98,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             thumb.removeFromParentNode()
             node.addChildNode(thumb)
             thumb.isHidden = false
+            
+            if !visitedNames.contains(referenceImageName) {
+                visitedNames.append(referenceImageName)
+                visitedImages.append(images[referenceImageName]!)
+            }
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
