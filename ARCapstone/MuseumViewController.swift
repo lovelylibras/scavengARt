@@ -1,11 +1,3 @@
-//
-//  MuseumViewController.swift
-//  scavengARt
-//
-//  Created by Rachel on 7/1/19.
-//  Copyright © 2019 Audra Kenney. All rights reserved.
-//
-
 import UIKit
 var museum:String = ""
 
