@@ -18,6 +18,7 @@ struct Paintings: Decodable {
     let name:String
     let artist:String
     let imageUrl:String
+    let description:String
 }
 
 var arrOfArt: [Paintings] = []

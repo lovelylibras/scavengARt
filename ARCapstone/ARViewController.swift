@@ -17,13 +17,17 @@ struct ImageInformation {
     let image: UIImage
 }
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+    var images : [String: UIImage] = [:]
 
+class ViewController: UIViewController, ARSCNViewDelegate {
+    var configuration = ARWorldTrackingConfiguration()
     @IBOutlet var sceneView: ARSCNView!
     var selectedImage : [Paintings]?
+   
     
-    let images = ["Madame X" : ImageInformation(name: "Madame X", description: "Portrait of Madame X is the title of a portrait painting by John Singer Sargent of a young socialite, Virginie Amélie Avegno Gautreau, wife of the French banker Pierre Gautreau. Madame X was painted not as a commission, but at the request of Sargent. It is a study in opposition. Sargent shows a woman posing in a black satin dress with jeweled straps, a dress that reveals and hides at the same time. The portrait is characterized by the pale flesh tone of the subject contrasted against a dark colored dress and background. The scandal resulting from the painting's controversial reception at the Paris Salon of 1884 amounted to a temporary set-back to Sargent while in France, though it may have helped him later establish a successful career in Britain and America.", image: UIImage(named: "ColormdmX")!)]
+//    let images = ["Madame X" : ImageInformation(name: "Madame X", description: "Portrait of Madame X is the title of a portrait painting by John Singer Sargent of a young socialite, Virginie Amélie Avegno Gautreau, wife of the French banker Pierre Gautreau. Madame X was painted not as a commission, but at the request of Sargent. It is a study in opposition. Sargent shows a woman posing in a black satin dress with jeweled straps, a dress that reveals and hides at the same time. The portrait is characterized by the pale flesh tone of the subject contrasted against a dark colored dress and background. The scandal resulting from the painting's controversial reception at the Paris Salon of 1884 amounted to a temporary set-back to Sargent while in France, though it may have helped him later establish a successful career in Britain and America.", image: UIImage(named: "ColormdmX")!)]
     
+
     let captureSession = AVCaptureSession()
     var previewLayer: CALayer!
     
@@ -83,6 +87,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                         print("Downloaded picture with response code \(res.statusCode)")
                         if let imageData = data {
                             let image = UIImage(data: imageData)!
+                            images.updateValue(image, forKey: medium.name)
                             let arImage = ARReferenceImage(image.cgImage!, orientation: CGImagePropertyOrientation.up, physicalWidth: CGFloat(image.cgImage!.width) )
                             arImage.name = name
                             imageSet.insert(arImage)
@@ -126,7 +131,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         if segue.identifier == "showImageInfo" {
             if let imageInformationVC = segue.destination as? ImageInformationViewController,
                 let actualSelectedImage = selectedImage {
-                imageInformationVC.imageInformation = ImageInformation(name: "Madame X", description: "Portrait of Madame X is the title of a portrait painting by John Singer Sargent of a young socialite, Virginie Amélie Avegno Gautreau, wife of the French banker Pierre Gautreau. Madame X was painted not as a commission, but at the request of Sargent. It is a study in opposition. Sargent shows a woman posing in a black satin dress with jeweled straps, a dress that reveals and hides at the same time. The portrait is characterized by the pale flesh tone of the subject contrasted against a dark colored dress and background. The scandal resulting from the painting's controversial reception at the Paris Salon of 1884 amounted to a temporary set-back to Sargent while in France, though it may have helped him later establish a successful career in Britain and America.", image: UIImage(named: "ColormdmX")!)
+                imageInformationVC.imageInformation = actualSelectedImage
             }
         }
     }
