@@ -1,26 +1,17 @@
-//
-//  HomeViewController.swift
-//  scavengARt
-//
-//  Created by Audra Kenney on 6/28/19.
-//  Copyright © 2019 Audra Kenney. All rights reserved.
-//
-
 import UIKit
 
+//global variables
 struct Hunt: Decodable {
     let name:String
     let description:String
     let paintings:[Paintings]
 }
-
 struct Paintings: Decodable {
     let name:String
     let artist:String
     let imageUrl:String
     let description:String
 }
-
 var arrOfArt: [Paintings] = []
 
 class HomeViewController: UIViewController {
@@ -28,8 +19,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        
         let jsonUrlString = "http://scavengart.herokuapp.com/api/hunt/\(museum)"
 
         guard let url = URL(string: jsonUrlString) else {
@@ -49,7 +38,5 @@ class HomeViewController: UIViewController {
             print(arrOfArt)
 
         }.resume()
-        // Do any additional setup after loading the view.
-        
     }
 }

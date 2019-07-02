@@ -1,11 +1,3 @@
-//
-//  ImageInformationViewController.swift
-//  scavengARt
-//
-//  Created by Audra Kenney on 6/28/19.
-//  Copyright © 2019 Audra Kenney. All rights reserved.
-//
-
 import UIKit
 
 class ImageInformationViewController: UIViewController {
@@ -18,8 +10,7 @@ class ImageInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        
+    
         if let actualImageInformation = imageInformation {
             self.imageView.image = images[actualImageInformation[0].name]
             self.nameLabel.text = actualImageInformation[0].name

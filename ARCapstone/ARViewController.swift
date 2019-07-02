@@ -1,39 +1,19 @@
-//
-//  ViewController.swift
-//  ARCapstone
-//
-//  Created by Audra Kenney on 6/27/19.
-//  Copyright © 2019 Audra Kenney. All rights reserved.
-//
-
 import UIKit
 import SceneKit
 import ARKit
 import AVFoundation
 
-struct ImageInformation {
-    let name: String
-    let description: String
-    let image: UIImage
-}
-
-    var images : [String: UIImage] = [:]
+//global variables
+var images : [String: UIImage] = [:]
 
 class ViewController: UIViewController, ARSCNViewDelegate {
     var configuration = ARWorldTrackingConfiguration()
     @IBOutlet var sceneView: ARSCNView!
     var selectedImage : [Paintings]?
    
-    
-//    let images = ["Madame X" : ImageInformation(name: "Madame X", description: "Portrait of Madame X is the title of a portrait painting by John Singer Sargent of a young socialite, Virginie Amélie Avegno Gautreau, wife of the French banker Pierre Gautreau. Madame X was painted not as a commission, but at the request of Sargent. It is a study in opposition. Sargent shows a woman posing in a black satin dress with jeweled straps, a dress that reveals and hides at the same time. The portrait is characterized by the pale flesh tone of the subject contrasted against a dark colored dress and background. The scandal resulting from the painting's controversial reception at the Paris Salon of 1884 amounted to a temporary set-back to Sargent while in France, though it may have helped him later establish a successful career in Britain and America.", image: UIImage(named: "ColormdmX")!)]
-    
-
     let captureSession = AVCaptureSession()
     var previewLayer: CALayer!
-    
     var captureDevice: AVCaptureDevice!
-    
-//    var ShipNode: SCNNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,13 +49,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let imageFetchingGroup = DispatchGroup()
         for medium in media {
             
-            print("THIS IS MEDIUM:", medium)
-            
             let name = medium.name
             let imageUrl = medium.imageUrl
             let url = URL(string: imageUrl)
             let session = URLSession(configuration: .default)
-            
             
             imageFetchingGroup.enter()
             let downloadPicTask = session.dataTask(with: url!) { (data, response, error) in
@@ -110,9 +87,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             self.sceneView.session.run(self.configuration)
         }
     }
-
     
-
     // Override to create and configure nodes for anchors added to the view's session.
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let imageAnchor = anchor as? ARImageAnchor,
