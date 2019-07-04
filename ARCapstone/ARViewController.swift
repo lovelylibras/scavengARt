@@ -34,14 +34,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
        
         self.addReferences(media: arrOfArt)
        
+        print("INITIAL CLUES", clues)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Create a session configuration
-        
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        // Create a session configuration
+//
+//    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        sceneView.session.pause()
     }
+    
     
     func addReferences(media: [Paintings]) {
         var imageSet = Set<ARReferenceImage>()
@@ -54,6 +61,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let session = URLSession(configuration: .default)
             
             imageFetchingGroup.enter()
+            print("IMAGEFETCHINGGROUP THREAD:", Thread.current)
             let downloadPicTask = session.dataTask(with: url!) { (data, response, error) in
                 if let e = error {
                     print("Error downloading picture: \(e)")
@@ -88,29 +96,41 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     // Override to create and configure nodes for anchors added to the view's session.
+    
+    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if let imageAnchor = anchor as? ARImageAnchor,
-        let referenceImageName = imageAnchor.referenceImage.name {
-            let scannedImage = arrOfArt.filter({$0.name == referenceImageName})
-            self.selectedImage = scannedImage
-            self.performSegue(withIdentifier: "showImageInfo", sender: self)
-            guard let thumb = sceneView.scene.rootNode.childNode(withName: "thumb", recursively: false) else { return }
-            thumb.removeFromParentNode()
-            node.addChildNode(thumb)
-            thumb.isHidden = false
-            
-            if !visitedNames.contains(referenceImageName) {
-                visitedNames.append(referenceImageName)
-                visitedImages.append(images[referenceImageName]!)
+        
+        print("RENDERER THREAD:", Thread.current)
+        
+        DispatchQueue.main.async {
+        
+            if let imageAnchor = anchor as? ARImageAnchor,
+            let referenceImageName = imageAnchor.referenceImage.name {
+                let scannedImage = arrOfArt.filter({$0.name == referenceImageName})
+                
+                self.selectedImage = scannedImage
+                self.performSegue(withIdentifier: "showImageInfo", sender: self)
+                guard let thumb = self.sceneView.scene.rootNode.childNode(withName: "thumb", recursively: false) else { return }
+                thumb.removeFromParentNode()
+                node.addChildNode(thumb)
+                thumb.isHidden = false
+                
+                if !visitedNames.contains(referenceImageName) {
+                    visitedNames.append(referenceImageName)
+                    visitedImages.append(images[referenceImageName]!)
+                    clues.remove(at: 0)
+                    print("FOUND IMAGE CLUES", clues)
+                }
             }
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showImageInfo" {
+            
             if let imageInformationVC = segue.destination as? ImageInformationViewController,
                 let actualSelectedImage = selectedImage {
+                print("PREPAREFORSEGUE THREAD:", Thread.current)
                 imageInformationVC.imageInformation = actualSelectedImage
             }
         }

@@ -20,6 +20,7 @@
 		960057EE22C584040006965D /* ARCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057ED22C584040006965D /* ARCapstoneUITests.swift */; };
 		960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FD22C6794A0006965D /* ImageInformationViewController.swift */; };
 		9600580022C67C6E0006965D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FF22C67C6E0006965D /* HomeViewController.swift */; };
+		9604181A22CD4AF50057AB93 /* ClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604181922CD4AF50057AB93 /* ClueViewController.swift */; };
 		CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		960057EF22C584040006965D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		960057FD22C6794A0006965D /* ImageInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInformationViewController.swift; sourceTree = "<group>"; };
 		960057FF22C67C6E0006965D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9604181922CD4AF50057AB93 /* ClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueViewController.swift; sourceTree = "<group>"; };
 		CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				72D1237422CBF34400646B8B /* StatusViewController.swift */,
 				72D1237622CBF8C800646B8B /* VisitedPaintingCell.swift */,
 				960057D122C584020006965D /* Main.storyboard */,
+				9604181922CD4AF50057AB93 /* ClueViewController.swift */,
 				960057D622C584040006965D /* LaunchScreen.storyboard */,
 				960057D922C584040006965D /* Info.plist */,
 				960057D422C584040006965D /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D1237522CBF34400646B8B /* StatusViewController.swift in Sources */,
+				9604181A22CD4AF50057AB93 /* ClueViewController.swift in Sources */,
 				960057D022C584020006965D /* ARViewController.swift in Sources */,
 				960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */,
 				CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */,
@@ -461,13 +465,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3TV9V27M3G;
+				DEVELOPMENT_TEAM = 4UJAY983CW;
 				INFOPLIST_FILE = ARCapstone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahsunnnnnnn;
+				PRODUCT_BUNDLE_IDENTIFIER = AKCapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,13 +483,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3TV9V27M3G;
+				DEVELOPMENT_TEAM = 4UJAY983CW;
 				INFOPLIST_FILE = ARCapstone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahsunnnnnnn;
+				PRODUCT_BUNDLE_IDENTIFIER = AKCapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
