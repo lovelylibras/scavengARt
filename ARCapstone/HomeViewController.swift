@@ -12,8 +12,10 @@ struct Paintings: Decodable {
     let artist:String
     let imageUrl:String
     let description:String
+//    let clue:String
 }
-var arrOfArt: [Paintings] = []
+var arrOfArt : [Paintings] = []
+var clues : [Paintings] = []
 class HomeViewController: UIViewController, URLSessionDownloadDelegate {
     var index = 1
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class HomeViewController: UIViewController, URLSessionDownloadDelegate {
                 let hunt = try JSONDecoder().decode(Hunt.self, from: data)
                 for i in hunt.paintings {
                     arrOfArt.append(i)
+                    clues.append(i)
                 }
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)

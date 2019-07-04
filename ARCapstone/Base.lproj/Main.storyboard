@@ -36,13 +36,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxq-JF-j1y">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="68.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="145" id="xnf-Je-vLR"/>
                                             </constraints>
                                         </imageView>
                                         <label autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aov-pz-lk7">
-                                            <rect key="frame" x="155" y="11" width="204" height="14.5"/>
+                                            <rect key="frame" x="155" y="11" width="204" height="47"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="47" id="1Fd-PT-NWI"/>
                                             </constraints>
@@ -78,7 +78,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6U-H4-Jmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.8" y="300"/>
+            <point key="canvasLocation" x="1145" y="300"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -111,6 +111,16 @@
                                 <rect key="frame" x="163.5" y="595.5" width="48" height="48"/>
                                 <state key="normal" image="shutter"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qoh-wL-sl3">
+                                <rect key="frame" x="163" y="17" width="50" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="clue"/>
+                                <connections>
+                                    <segue destination="Heg-5y-opz" kind="popoverPresentation" popoverAnchorView="Qoh-wL-sl3" id="nfv-GP-uHz">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -130,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="-50.223214285714285"/>
+            <point key="canvasLocation" x="130.40000000000001" y="-50.824587706146929"/>
         </scene>
         <!--Image Information View Controller-->
         <scene sceneID="Hmq-wr-mOm">
@@ -147,14 +157,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzZ-uH-43R">
-                                <rect key="frame" x="154" y="617" width="67" height="30"/>
+                                <rect key="frame" x="239" y="617" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next Clue">
                                     <color key="titleColor" red="0.83510767490000004" green="0.43448587119999998" blue="0.2190277085" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="closeModal:" destination="aV3-k2-A8M" eventType="touchUpInside" id="twx-YL-wad"/>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="oJb-Yw-Z1H"/>
+                                    <action selector="nextClue:" destination="aV3-k2-A8M" eventType="touchUpInside" id="IYA-mf-wE7"/>
+                                    <segue destination="Heg-5y-opz" kind="show" id="k8e-pw-A5V"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6v-rM-d0w">
@@ -177,6 +188,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sV-5L-99R">
+                                <rect key="frame" x="80" y="617" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.83510767490000004" green="0.43448587119999998" blue="0.2190277085" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeModal:" destination="aV3-k2-A8M" eventType="touchUpInside" id="rC8-LT-Ck8"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="OX6-q6-o0N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -201,6 +223,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzh-MK-aHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144.8" y="-498.02955665024632"/>
+        </scene>
+        <!--Clue View Controller-->
+        <scene sceneID="TZS-k5-Vam">
+            <objects>
+                <viewController id="Heg-5y-opz" customClass="ClueViewController" customModule="scavengARt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aCR-KL-Pwl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grB-kt-x0L">
+                                <rect key="frame" x="84" y="252" width="207" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNT-Vt-cfO">
+                                <rect key="frame" x="166" y="617" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Got it!"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="8UU-ar-fxe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fnh-hS-H0v"/>
+                    </view>
+                    <connections>
+                        <outlet property="clue" destination="grB-kt-x0L" id="t77-L1-UJy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S6Z-Um-ZQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="-798"/>
         </scene>
         <!--Museum View Controller-->
         <scene sceneID="Z2Q-NI-2FB">
@@ -300,7 +357,7 @@
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="T5m-96-zIb"/>
+                                    <segue destination="Heg-5y-opz" kind="show" id="YWy-3B-qwt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -321,12 +378,14 @@
         <image name="Met" width="1704" height="804"/>
         <image name="MoMA" width="1720" height="804"/>
         <image name="Whitney" width="1244" height="606"/>
+        <image name="clue" width="512" height="512"/>
         <image name="home" width="256" height="256"/>
         <image name="img_5304" width="980" height="286"/>
         <image name="shutter" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kYr-ol-WAn"/>
-        <segue reference="oJb-Yw-Z1H"/>
+        <segue reference="k8e-pw-A5V"/>
+        <segue reference="OX6-q6-o0N"/>
     </inferredMetricsTieBreakers>
 </document>

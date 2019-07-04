@@ -21,7 +21,10 @@ class ImageInformationViewController: UIViewController {
     }
     
     @IBAction func closeModal(_ sender: Any) {
+    }
     
+
+    @IBAction func nextClue(_ sender: Any) {
     }
     
     
