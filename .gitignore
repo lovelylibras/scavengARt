@@ -1,2 +1,4 @@
 *.xcuserstate
 */xcuserdata/*
+ARCapstone.xcodeproj/project.pbxproj
+.DS_Store
