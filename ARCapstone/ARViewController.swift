@@ -24,7 +24,7 @@ class ViewController: UIViewController, ARSCNViewDelegate  {
         sceneView.delegate = self
         sceneView.autoenablesDefaultLighting = true
         let thumbScene = SCNScene(named: "art.scnassets/success.scn")
-        thumbNode = thumbScene?.rootNode
+        thumbNode = thumbScene?.rootNode.childNode(withName: "thumb", recursively: false)
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
@@ -34,6 +34,9 @@ class ViewController: UIViewController, ARSCNViewDelegate  {
 //
 ////         Set the scene to the view
 //        sceneView.scene = successScene
+//         guard let arImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
+        
+        
         
         let configuration = ARWorldTrackingConfiguration()
         let detectionImages = loadedImagesFromDirectoryContents()
@@ -140,19 +143,20 @@ class ViewController: UIViewController, ARSCNViewDelegate  {
     // Override to create and configure nodes for anchors added to the view's session.
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
-        
+        print("fire away")
         if let imageAnchor = anchor as? ARImageAnchor {
-            let size = imageAnchor.referenceImage.physicalSize
-            let plane = SCNPlane(width: size.width, height: size.height)
-            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
-            plane.cornerRadius = 0.005
-            let planeNode = SCNNode(geometry: plane)
-            planeNode.eulerAngles.x = -.pi / 2
-            node.addChildNode(planeNode)
+//            let size = imageAnchor.referenceImage.physicalSize
+//            let plane = SCNPlane(width: size.width, height: size.height)
+//            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+//            plane.cornerRadius = 0.005
+//            let planeNode = SCNNode(geometry: plane)
+//            planeNode.eulerAngles.x = -.pi / 2
+//            node.addChildNode(planeNode)
             
-            if let shapeNode = thumbNode {
-                node.addChildNode(shapeNode)
-            }
+            let shapeNode = thumbNode!
+            node.addChildNode(shapeNode)
+            print("THUMB", shapeNode)
+            
               print("I recognize this image")
         }
         
