@@ -4,7 +4,7 @@ class ImageInformationViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var descLabel: UITextField!
+    @IBOutlet weak var descLabel: UITextView!
     
     var imageInformation : [Paintings]?
     
