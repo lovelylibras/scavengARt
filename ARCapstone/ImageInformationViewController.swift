@@ -21,7 +21,7 @@ class ImageInformationViewController: UIViewController {
     }
     
     @IBAction func closeModal(_ sender: Any) {
-    
+        self.dismiss(animated: true, completion: nil)
     }
     
     

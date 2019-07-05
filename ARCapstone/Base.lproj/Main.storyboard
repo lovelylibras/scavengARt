@@ -172,8 +172,7 @@
                                     <color key="titleColor" red="0.83510767490000004" green="0.43448587119999998" blue="0.2190277085" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeModal:" destination="aV3-k2-A8M" eventType="touchUpInside" id="twx-YL-wad"/>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="oJb-Yw-Z1H"/>
+                                    <action selector="closeModal:" destination="aV3-k2-A8M" eventType="touchUpInside" id="idB-Uq-CZq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -331,6 +330,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kYr-ol-WAn"/>
-        <segue reference="oJb-Yw-Z1H"/>
+        <segue reference="T5m-96-zIb"/>
     </inferredMetricsTieBreakers>
 </document>
