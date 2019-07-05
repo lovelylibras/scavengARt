@@ -12,16 +12,19 @@ var visitedImages : [UIImage] = []
 extension ViewController: ARSCNViewDelegate{
     func renderer(_ renderer: SCNSceneRenderer, didAdd node:SCNNode, for anchor: ARAnchor) {
         guard let imageAnchor = anchor as? ARImageAnchor, let imageName = imageAnchor.name else { return }
+        if(imageName == clues[0].name){
         let scannedImage = arrOfArt.filter({$0.name == imageName})
         self.selectedImage = scannedImage
-        print("SCANNEDIMAGE", scannedImage)
+       
         node.addChildNode(SuccessNode(withReferenceImage: imageAnchor.referenceImage))
-        
+    
         self.performSegue(withIdentifier: "showImageInfo", sender: self)
         
-        if !visitedNames.contains(imageName) {
+        if (!visitedNames.contains(imageName) && clues[0].name == imageName) {
             visitedNames.append(imageName)
             visitedImages.append(images[imageName]!)
+            clues.remove(at: 0)
+        }
         }
         
     }
@@ -32,8 +35,10 @@ class ViewController: UIViewController  {
     var augmentedRealityConfiguration = ARWorldTrackingConfiguration()
     var augmentedRealitySession = ARSession()
     
-    @IBOutlet weak var trackingLabel: UILabel!
+    @IBOutlet weak var clueDisplayLabel: UILabel!
     @IBOutlet weak var augmentedRealityView: ARSCNView!
+    
+    
     var selectedImage : [Paintings]?
    
     
@@ -41,6 +46,11 @@ class ViewController: UIViewController  {
         super.viewDidLoad()
         startARSession()
         generateImagesFromServer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        clueDisplayLabel.text = "Find \(clues[0].name)"
     }
 
     func startARSession(){

@@ -14,6 +14,8 @@ struct Paintings: Decodable {
     let description:String
 }
 var arrOfArt: [Paintings] = []
+var clues: [Paintings] = []
+
 
 class HomeViewController: UIViewController {
     override func viewDidLoad() {
@@ -32,11 +34,13 @@ class HomeViewController: UIViewController {
                 let hunt = try JSONDecoder().decode(Hunt.self, from: data)
                 for i in hunt.paintings {
                     arrOfArt.append(i)
+                    clues.append(i)
                 }
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)
             }
-            print(arrOfArt)
+            print("ARR OF ART", arrOfArt)
+            print("CLUES", clues)
             imageFetchingGroup.leave()
         }.resume()
     }
