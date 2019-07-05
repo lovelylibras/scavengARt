@@ -23,6 +23,7 @@
 		960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FD22C6794A0006965D /* ImageInformationViewController.swift */; };
 		9600580022C67C6E0006965D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FF22C67C6E0006965D /* HomeViewController.swift */; };
 		CC383A8822CFD36E0056F416 /* ClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC383A8722CFD36E0056F416 /* ClueViewController.swift */; };
+		CC383A8A22CFE2AE0056F416 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC383A8922CFE2AE0056F416 /* GlobalVars.swift */; };
 		CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		960057FD22C6794A0006965D /* ImageInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInformationViewController.swift; sourceTree = "<group>"; };
 		960057FF22C67C6E0006965D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CC383A8722CFD36E0056F416 /* ClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueViewController.swift; sourceTree = "<group>"; };
+		CC383A8922CFE2AE0056F416 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
 		CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				960057D422C584040006965D /* Assets.xcassets */,
 				960057CD22C584020006965D /* art.scnassets */,
 				CC383A8722CFD36E0056F416 /* ClueViewController.swift */,
+				CC383A8922CFE2AE0056F416 /* GlobalVars.swift */,
 			);
 			path = ARCapstone;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				CC383A8822CFD36E0056F416 /* ClueViewController.swift in Sources */,
 				960057D022C584020006965D /* ARViewController.swift in Sources */,
 				72A677AC22CFA4CA00019EC6 /* UILabel+Extensions.swift in Sources */,
+				CC383A8A22CFE2AE0056F416 /* GlobalVars.swift in Sources */,
 				960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */,
 				72A677AA22CFA1E800019EC6 /* SuccessNode.swift in Sources */,
 				CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */,

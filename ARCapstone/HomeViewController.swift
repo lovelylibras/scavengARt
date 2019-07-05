@@ -20,6 +20,8 @@ var clues: [Paintings] = []
 class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        clues = []
+        arrOfArt = []
         let jsonUrlString = "http://scavengart.herokuapp.com/api/hunt/\(museum)"
 
         guard let url = URL(string: jsonUrlString) else {
@@ -39,8 +41,7 @@ class HomeViewController: UIViewController {
             } catch let jsonErr {
                 print("Error serializing json", jsonErr)
             }
-            print("ARR OF ART", arrOfArt)
-            print("CLUES", clues)
+        
             imageFetchingGroup.leave()
         }.resume()
     }
