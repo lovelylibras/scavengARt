@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7253D9E022C9AEDA003E32B6 /* HuntPaintingsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7253D9DF22C9AEDA003E32B6 /* HuntPaintingsAPI.swift */; };
 		72A677A822CF9D3800019EC6 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A677A722CF9D3800019EC6 /* ImageDownloader.swift */; };
 		72A677AA22CFA1E800019EC6 /* SuccessNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A677A922CFA1E800019EC6 /* SuccessNode.swift */; };
 		72A677AC22CFA4CA00019EC6 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A677AB22CFA4CA00019EC6 /* UILabel+Extensions.swift */; };
@@ -23,6 +22,7 @@
 		960057EE22C584040006965D /* ARCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057ED22C584040006965D /* ARCapstoneUITests.swift */; };
 		960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FD22C6794A0006965D /* ImageInformationViewController.swift */; };
 		9600580022C67C6E0006965D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FF22C67C6E0006965D /* HomeViewController.swift */; };
+		CC383A8822CFD36E0056F416 /* ClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC383A8722CFD36E0056F416 /* ClueViewController.swift */; };
 		CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7253D9DF22C9AEDA003E32B6 /* HuntPaintingsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntPaintingsAPI.swift; sourceTree = "<group>"; };
 		72A677A722CF9D3800019EC6 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		72A677A922CFA1E800019EC6 /* SuccessNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessNode.swift; sourceTree = "<group>"; };
 		72A677AB22CFA4CA00019EC6 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		960057EF22C584040006965D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		960057FD22C6794A0006965D /* ImageInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInformationViewController.swift; sourceTree = "<group>"; };
 		960057FF22C67C6E0006965D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CC383A8722CFD36E0056F416 /* ClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueViewController.swift; sourceTree = "<group>"; };
 		CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +119,6 @@
 			children = (
 				960057CB22C584020006965D /* AppDelegate.swift */,
 				CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */,
-				7253D9DF22C9AEDA003E32B6 /* HuntPaintingsAPI.swift */,
 				72A677AB22CFA4CA00019EC6 /* UILabel+Extensions.swift */,
 				960057CF22C584020006965D /* ARViewController.swift */,
 				960057FF22C67C6E0006965D /* HomeViewController.swift */,
@@ -133,6 +132,7 @@
 				960057D922C584040006965D /* Info.plist */,
 				960057D422C584040006965D /* Assets.xcassets */,
 				960057CD22C584020006965D /* art.scnassets */,
+				CC383A8722CFD36E0056F416 /* ClueViewController.swift */,
 			);
 			path = ARCapstone;
 			sourceTree = "<group>";
@@ -288,13 +288,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D1237522CBF34400646B8B /* StatusViewController.swift in Sources */,
+				CC383A8822CFD36E0056F416 /* ClueViewController.swift in Sources */,
 				960057D022C584020006965D /* ARViewController.swift in Sources */,
 				72A677AC22CFA4CA00019EC6 /* UILabel+Extensions.swift in Sources */,
 				960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */,
 				72A677AA22CFA1E800019EC6 /* SuccessNode.swift in Sources */,
 				CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */,
 				960057CC22C584020006965D /* AppDelegate.swift in Sources */,
-				7253D9E022C9AEDA003E32B6 /* HuntPaintingsAPI.swift in Sources */,
 				72D1237722CBF8C800646B8B /* VisitedPaintingCell.swift in Sources */,
 				72A677A822CF9D3800019EC6 /* ImageDownloader.swift in Sources */,
 				9600580022C67C6E0006965D /* HomeViewController.swift in Sources */,
@@ -473,13 +473,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3TV9V27M3G;
+				DEVELOPMENT_TEAM = 2Q3S9WKM57;
 				INFOPLIST_FILE = ARCapstone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahsunkimmm;
+				PRODUCT_BUNDLE_IDENTIFIER = rreincapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,13 +491,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3TV9V27M3G;
+				DEVELOPMENT_TEAM = 2Q3S9WKM57;
 				INFOPLIST_FILE = ARCapstone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahsunkimmm;
+				PRODUCT_BUNDLE_IDENTIFIER = rreincapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
