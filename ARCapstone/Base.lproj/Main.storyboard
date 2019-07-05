@@ -143,7 +143,7 @@
         <scene sceneID="Hmq-wr-mOm">
             <objects>
                 <viewController id="aV3-k2-A8M" customClass="ImageInformationViewController" customModule="scavengARt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gw7-q4-m8u" customClass="Image">
+                    <view key="view" contentMode="scaleToFill" id="gw7-q4-m8u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

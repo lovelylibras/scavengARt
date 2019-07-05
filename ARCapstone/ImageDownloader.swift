@@ -50,7 +50,7 @@ class ImageDownloader{
     }
 
     class func referenceImageFrom(_ downloadedData: [ImageData]) -> Set<ARReferenceImage>{
-        var referenceImages = Set<ARReferenceImage>([])
+        var referenceImages = Set<ARReferenceImage>()
         
         
         downloadedData.forEach {
