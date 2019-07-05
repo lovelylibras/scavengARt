@@ -36,16 +36,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxq-JF-j1y">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="68.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="59.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="145" id="xnf-Je-vLR"/>
                                             </constraints>
                                         </imageView>
                                         <label autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aov-pz-lk7">
-                                            <rect key="frame" x="155" y="11" width="204" height="47"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="47" id="1Fd-PT-NWI"/>
-                                            </constraints>
+                                            <rect key="frame" x="155" y="11" width="31" height="38"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -55,13 +52,9 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="aov-pz-lk7" secondAttribute="bottom" id="9kk-QB-DPM"/>
                                         <constraint firstItem="wxq-JF-j1y" firstAttribute="top" secondItem="A4s-ny-clI" secondAttribute="top" id="A4F-I4-gQD"/>
                                         <constraint firstItem="aov-pz-lk7" firstAttribute="top" secondItem="A4s-ny-clI" secondAttribute="topMargin" id="EHw-Ig-mDI"/>
-                                        <constraint firstItem="aov-pz-lk7" firstAttribute="top" secondItem="A4s-ny-clI" secondAttribute="topMargin" id="IiY-dh-NEM"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="aov-pz-lk7" secondAttribute="bottom" id="WfZ-G5-JLF"/>
                                         <constraint firstItem="wxq-JF-j1y" firstAttribute="leading" secondItem="A4s-ny-clI" secondAttribute="leading" id="YSg-Ut-Upx"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="aov-pz-lk7" secondAttribute="trailing" id="dAE-LZ-lMj"/>
                                         <constraint firstAttribute="bottom" secondItem="wxq-JF-j1y" secondAttribute="bottom" id="qq6-gm-IOr"/>
                                         <constraint firstItem="aov-pz-lk7" firstAttribute="leading" secondItem="wxq-JF-j1y" secondAttribute="trailing" constant="10" id="vh8-Vt-ejt"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="aov-pz-lk7" secondAttribute="trailing" id="x8c-0A-9Hl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -138,6 +131,7 @@
                     <connections>
                         <outlet property="augmentedRealityView" destination="BrB-h1-WRS" id="CBu-R5-Zqj"/>
                         <outlet property="clueDisplayLabel" destination="IUF-rX-AZd" id="fyy-hg-xrr"/>
+                        <outlet property="homeButton" destination="dJ1-ds-1gf" id="SnU-Sg-J51"/>
                         <segue destination="aV3-k2-A8M" kind="presentation" identifier="showImageInfo" id="aTB-wX-Vwd"/>
                     </connections>
                 </viewController>
@@ -149,7 +143,7 @@
         <scene sceneID="Hmq-wr-mOm">
             <objects>
                 <viewController id="aV3-k2-A8M" customClass="ImageInformationViewController" customModule="scavengARt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gw7-q4-m8u" customClass="Image">
+                    <view key="view" contentMode="scaleToFill" id="gw7-q4-m8u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

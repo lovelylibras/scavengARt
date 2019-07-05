@@ -10,6 +10,7 @@ class ImageInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     
         if let actualImageInformation = imageInformation {
             self.imageView.image = images[actualImageInformation[0].name]

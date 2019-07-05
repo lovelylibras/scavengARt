@@ -52,6 +52,7 @@ class ImageDownloader{
     class func referenceImageFrom(_ downloadedData: [ImageData]) -> Set<ARReferenceImage>{
         var referenceImages = Set<ARReferenceImage>()
         
+        
         downloadedData.forEach {
             guard let cgImage = $0.image.cgImage else {return}
             let referenceImage = ARReferenceImage(cgImage, orientation: $0.orientation, physicalWidth: $0.physicalWidth)
