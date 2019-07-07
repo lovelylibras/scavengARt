@@ -13,9 +13,9 @@ class SuccessNode: SCNNode{
     init(withReferenceImage target:ARReferenceImage) {
         super.init()
         
-        let thumbScene = SCNScene(named: "art.scnassets/success.scn")
+        let thumbScene = SCNScene(named: "art.scnassets/trophyScene.scn")
         var thumbNode: SCNNode?
-        thumbNode = thumbScene?.rootNode.childNode(withName: "thumb", recursively: false)
+        thumbNode = thumbScene?.rootNode.childNode(withName: "trophy", recursively: false)
         self.addChildNode(thumbNode!)
     }
     required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }
