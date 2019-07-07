@@ -71,7 +71,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6U-H4-Jmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="264"/>
+            <point key="canvasLocation" x="1578" y="260"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="83" width="375" height="584"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJ1-ds-1gf">
                                 <rect key="frame" x="20" y="28" width="33" height="30"/>
@@ -103,6 +103,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp4-Kw-OB7">
                                 <rect key="frame" x="163.5" y="595.5" width="48" height="48"/>
                                 <state key="normal" image="shutter"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CUL-Th-FMu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clueDisplayLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUF-rX-AZd">
                                 <rect key="frame" x="62.5" y="33.5" width="250" height="20.5"/>
@@ -137,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="-51"/>
+            <point key="canvasLocation" x="784.79999999999995" y="-51.724137931034484"/>
         </scene>
         <!--Image Information View Controller-->
         <scene sceneID="Hmq-wr-mOm">
@@ -212,47 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzh-MK-aHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="-477"/>
-        </scene>
-        <!--Clue View Controller-->
-        <scene sceneID="7H9-76-wrK">
-            <objects>
-                <viewController id="02t-rq-sEW" customClass="ClueViewController" customModule="scavengARt" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FiD-3u-8ew">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjg-pv-2dM">
-                                <rect key="frame" x="10" y="323.5" width="355" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-hP-wR8">
-                                <rect key="frame" x="166" y="541" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Got it!"/>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="prW-fk-7r9"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="yjg-pv-2dM" firstAttribute="centerX" secondItem="FiD-3u-8ew" secondAttribute="centerX" id="4yJ-w1-mw4"/>
-                            <constraint firstItem="yjg-pv-2dM" firstAttribute="leading" secondItem="jpY-CJ-gHe" secondAttribute="leading" constant="10" id="5tz-k9-cVq"/>
-                            <constraint firstItem="jpY-CJ-gHe" firstAttribute="trailing" secondItem="yjg-pv-2dM" secondAttribute="trailing" constant="10" id="COK-ni-7Ke"/>
-                            <constraint firstItem="yjg-pv-2dM" firstAttribute="centerY" secondItem="FiD-3u-8ew" secondAttribute="centerY" id="Gr4-1t-9EL"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="jpY-CJ-gHe"/>
-                    </view>
-                    <connections>
-                        <outlet property="clueLabel" destination="yjg-pv-2dM" id="kJW-rh-4go"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iVQ-T1-8XV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-26.399999999999999" y="-51.724137931034484"/>
+            <point key="canvasLocation" x="1578" y="-430"/>
         </scene>
         <!--Museum View Controller-->
         <scene sceneID="Z2Q-NI-2FB">
@@ -331,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaK-ia-jBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1828.985507246377" y="-50.223214285714285"/>
+            <point key="canvasLocation" x="-687" y="-53"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="kL7-ZL-2km">
@@ -352,7 +315,7 @@
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
-                                    <segue destination="02t-rq-sEW" kind="show" id="nGM-gJ-qxF"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="ceZ-jR-dy8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -366,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tt-Xk-04O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-859.4202898550725" y="-50.223214285714285"/>
+            <point key="canvasLocation" x="50" y="-52"/>
         </scene>
     </scenes>
     <resources>
