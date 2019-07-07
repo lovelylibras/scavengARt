@@ -16,8 +16,36 @@ extension ViewController: ARSCNViewDelegate{
         if(imageName == clues[0].name){
         let scannedImage = arrOfArt.filter({$0.name == imageName})
         self.selectedImage = scannedImage
+            
+            let physicalWidth = imageAnchor.referenceImage.physicalSize.width
+            let physicalHeight = imageAnchor.referenceImage.physicalSize.height
+            
+            let mainPlane = SCNPlane(width: physicalWidth, height: physicalHeight)
+            mainPlane.firstMaterial?.colorBufferWriteMask = .alpha
+            
+            let mainNode = SCNNode(geometry: mainPlane)
+            mainNode.eulerAngles.x = -.pi/2
+            mainNode.opacity = 1
+            
+            node.addChildNode(mainNode)
+            
+            self.highlightDetection(on: mainNode, width: physicalWidth, height: physicalHeight, completionHandler: {
+                self.performSegue(withIdentifier: "showImageInfo", sender: self)
+
+                let thumbNode = SuccessNode(withReferenceImage: imageAnchor.referenceImage)
+                thumbNode.renderingOrder = -1
+                node.addChildNode(thumbNode)
+                
+                let shapeSpin = SCNAction.rotateBy(x: 0, y: 0, z: 2 * .pi, duration: 10)
+                let repeatSpin = SCNAction.repeatForever(shapeSpin)
+                thumbNode.runAction(repeatSpin)
+                
+            })
+            
+            
        
-        node.addChildNode(SuccessNode(withReferenceImage: imageAnchor.referenceImage))
+        
+        
     
         
         
@@ -26,10 +54,33 @@ extension ViewController: ARSCNViewDelegate{
             visitedImages.append(images[imageName]!)
             clues.remove(at: 0)
         }
-        self.performSegue(withIdentifier: "showImageInfo", sender: self)
         }
         }
         
+    }
+    
+    
+    func highlightDetection(on rootNode: SCNNode, width: CGFloat, height: CGFloat, completionHandler block: @escaping (() -> Void)) {
+        let planeNode = SCNNode(geometry: SCNPlane(width: width, height: height))
+        planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.white
+        planeNode.position.z += 0.1
+        planeNode.opacity = 0
+        
+        rootNode.addChildNode(planeNode)
+        planeNode.runAction(self.imageHighlightAction) {
+            block()
+        }
+    }
+    
+    var imageHighlightAction: SCNAction {
+        return .sequence([
+            .wait(duration: 0.25),
+            .fadeOpacity(to: 0.85, duration: 0.25),
+            .fadeOpacity(to: 0.15, duration: 0.25),
+            .fadeOpacity(to: 0.85, duration: 0.25),
+            .fadeOut(duration: 0.5),
+            .removeFromParentNode()
+            ])
     }
 }
 
