@@ -2,7 +2,7 @@ import Foundation
 
 class NetworkingService {
     
-    let baseUrl = "http://scavengart.herokuapp.com/auth"
+    let baseUrl = "http://scavengart.herokuapp.com/"
     
     func request(endpoint: String,
                  parameters: [String: Any],

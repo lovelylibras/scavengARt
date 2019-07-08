@@ -37,6 +37,9 @@ class LoginViewController: UIViewController {
         } else {
             userNameTextField.placeholder = "Enter Username"
         }
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+
         // Do any additional setup after loading the view.
     }
     
@@ -72,7 +75,7 @@ class LoginViewController: UIViewController {
         let parameters = ["userName":userName,
                           "password":password]
         
-        networkingService.request(endpoint: user == "teacher" ? "/teacher-login" : "/student-login", parameters: parameters) { (result) in
+        networkingService.request(endpoint: user == "teacher" ? "auth/teacher-login" : "auth/student-login", parameters: parameters) { (result) in
             
             switch result {
                 
