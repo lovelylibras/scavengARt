@@ -27,27 +27,22 @@ extension ViewController: ARSCNViewDelegate{
             mainNode.eulerAngles.x = -.pi/2
             mainNode.opacity = 1
             
-            node.addChildNode(mainNode)
-            
+          
             self.highlightDetection(on: mainNode, width: physicalWidth, height: physicalHeight, completionHandler: {
                 self.performSegue(withIdentifier: "showImageInfo", sender: self)
 
-                let thumbNode = SuccessNode(withReferenceImage: imageAnchor.referenceImage)
-                thumbNode.renderingOrder = -1
-                node.addChildNode(thumbNode)
-                
-                let shapeSpin = SCNAction.rotateBy(x: 0, y: 0, z: 2 * .pi, duration: 10)
-                let repeatSpin = SCNAction.repeatForever(shapeSpin)
-                thumbNode.runAction(repeatSpin)
-                
             })
+            node.addChildNode(mainNode)
+            let thumbNode = SuccessNode(withReferenceImage: imageAnchor.referenceImage)
+            thumbNode.renderingOrder = -1
+            node.addChildNode(thumbNode)
+            
+            let shapeSpin = SCNAction.rotateBy(x: 0, y: 0, z: 2 * .pi, duration: 10)
+            let repeatSpin = SCNAction.repeatForever(shapeSpin)
+            thumbNode.runAction(repeatSpin)
             
             
-       
-        
-        
     
-        
         
         if (!visitedNames.contains(imageName) && clues[0].name == imageName) {
             visitedNames.append(imageName)
@@ -56,6 +51,7 @@ extension ViewController: ARSCNViewDelegate{
         }
         }
         }
+       
         
     }
     
