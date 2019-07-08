@@ -115,8 +115,7 @@ class ViewController: UIViewController  {
         if clues.isEmpty {
             homeButton.isHidden = false
             clueDisplayLabel.text = "You found all the paintings!!!!!! "
-        }else {
-            homeButton.isHidden = true
+        } else {
              clueDisplayLabel.text = "Find \(clues[0].name)"
         }
     }

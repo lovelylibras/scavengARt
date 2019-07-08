@@ -22,7 +22,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.46666666670000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pnR-VV-Na7">
@@ -96,17 +96,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJ1-ds-1gf">
                                 <rect key="frame" x="20" y="28" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Home" image="home"/>
+                                <state key="normal" title="Home" image="homeButton"/>
                                 <connections>
-                                    <segue destination="Zv6-X4-vCx" kind="show" id="ree-QJ-pCQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyk-IM-TRA">
-                                <rect key="frame" x="313" y="38" width="46" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Home" image="img_5304"/>
-                                <connections>
-                                    <segue destination="8pQ-2y-FFG" kind="presentation" id="FJT-eA-vV5"/>
+                                    <segue destination="Zv6-X4-vCx" kind="show" id="GxA-mu-gCK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp4-Kw-OB7">
@@ -126,6 +118,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyk-IM-TRA">
+                                <rect key="frame" x="313" y="25" width="46" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home" image="dots"/>
+                                <connections>
+                                    <segue destination="8pQ-2y-FFG" kind="presentation" id="FJT-eA-vV5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -162,7 +162,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6X-2g-SlC">
                                 <rect key="frame" x="10" y="509.99999999999994" width="355" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.31764705879999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.46666666670000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6v-rM-d0w">
@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzh-MK-aHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="-430"/>
+            <point key="canvasLocation" x="1577" y="-389"/>
         </scene>
         <!--Entry View Controller-->
         <scene sceneID="vHf-oS-mIy">
@@ -256,7 +256,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-vq-S5H">
                                 <rect key="frame" x="87.666666666666686" y="411" width="200" height="50"/>
-                                <color key="backgroundColor" red="0.31764705882352939" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.46666666666666667" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ldv-CE-KbQ"/>
                                     <constraint firstAttribute="width" constant="200" id="ugt-fV-1Pw"/>
@@ -289,7 +289,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8c-v5-SND" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="95V-he-Xqb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3642" y="-53"/>
+            <point key="canvasLocation" x="-3012" y="-53"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="7Lx-Hp-dyv">
@@ -321,7 +321,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6G-fu-NbF">
                                 <rect key="frame" x="112.66666666666669" y="432.66666666666669" width="150" height="30"/>
-                                <color key="backgroundColor" red="0.31764705882352939" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.46666666666666667" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="SB9-N8-W4P"/>
                                     <constraint firstAttribute="height" constant="30" id="SCn-PL-tYp"/>
@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYM-bM-mBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2964" y="-50"/>
+            <point key="canvasLocation" x="-2143" y="-389"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="cn9-JD-Vj2">
@@ -411,7 +411,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zli-TY-vI4">
                                 <rect key="frame" x="10" y="164" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.31764705879999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.46666666670000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KO-4s-lyR">
@@ -460,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6s-En-MSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2282" y="-50"/>
+            <point key="canvasLocation" x="-1425" y="-52"/>
         </scene>
         <!--Museum View Controller-->
         <scene sceneID="Z2Q-NI-2FB">
@@ -566,7 +566,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXj-74-a1i">
                                 <rect key="frame" x="87.666666666666686" y="381" width="200" height="50"/>
-                                <color key="backgroundColor" red="0.31764705879999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.46666666666666667" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qg6-tj-etm"/>
                                     <constraint firstAttribute="width" constant="200" id="tmh-bm-MLD"/>
@@ -683,7 +683,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk5-oX-2Mz">
                                 <rect key="frame" x="112.66666666666669" y="541" width="150" height="30"/>
-                                <color key="backgroundColor" red="0.31764705879999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.46666666666666667" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Dik-e7-EOl"/>
                                     <constraint firstAttribute="width" constant="150" id="Lq9-LV-SHg"/>
@@ -736,15 +736,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLx-yF-d3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2964" y="651.72413793103453"/>
+            <point key="canvasLocation" x="-2143" y="259"/>
         </scene>
     </scenes>
     <resources>
         <image name="Met" width="1704" height="804"/>
         <image name="MoMA" width="1720" height="804"/>
         <image name="Whitney" width="1244" height="606"/>
-        <image name="home" width="256" height="256"/>
-        <image name="img_5304" width="980" height="286"/>
+        <image name="dots" width="90" height="70"/>
+        <image name="homeButton" width="90" height="70"/>
         <image name="scavengARt" width="479" height="140"/>
         <image name="shutter" width="48" height="48"/>
     </resources>
