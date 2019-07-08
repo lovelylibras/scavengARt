@@ -8,6 +8,7 @@
 
 import Foundation
 
+// ERROR HANDLING
 struct ErrorResponse: Decodable, LocalizedError {
     let error: String
     

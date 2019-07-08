@@ -110,7 +110,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clueDisplayLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUF-rX-AZd">
                                 <rect key="frame" x="62.666666666666657" y="106" width="249.99999999999997" height="20.333333333333329"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.46666666670000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="YL0-U5-sON"/>
                                 </constraints>
@@ -750,7 +750,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yxH-ik-7b4"/>
-        <segue reference="q5W-PD-fmJ"/>
+        <segue reference="GxA-mu-gCK"/>
         <segue reference="RtM-m7-R5i"/>
         <segue reference="PS2-HQ-xeD"/>
         <segue reference="jvz-GD-skj"/>

@@ -8,18 +8,16 @@
 
 import UIKit
 
+// CREATES THE TABLE CELLS FOR THE VISITED VIEW
 class VisitedPaintingCell: UITableViewCell {
     @IBOutlet weak var PaintingView: UIImageView!
     @IBOutlet weak var PaintingLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
