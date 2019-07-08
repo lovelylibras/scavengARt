@@ -9,7 +9,7 @@ var visitedNames : [String] = []
 var visitedImages : [UIImage] = []
 
 
-extension ViewController: ARSCNViewDelegate{
+extension ViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node:SCNNode, for anchor: ARAnchor) {
         print("I am in here")
         DispatchQueue.main.async{
@@ -26,7 +26,8 @@ extension ViewController: ARSCNViewDelegate{
             
             let mainNode = SCNNode(geometry: mainPlane)
             mainNode.eulerAngles.x = -.pi/2
-            mainNode.opacity = 1
+            mainNode.opacity = 0
+            
             node.addChildNode(mainNode)
             let thumbNode = SuccessNode(withReferenceImage: imageAnchor.referenceImage)
             node.addChildNode(thumbNode)
@@ -48,13 +49,8 @@ extension ViewController: ARSCNViewDelegate{
                  
 
             })
-           
- 
-       
-            
-            
-    
-        
+
+
         if (!visitedNames.contains(imageName) && clues[0].name == imageName) {
             visitedNames.append(imageName)
             visitedImages.append(images[imageName]!)
@@ -62,7 +58,7 @@ extension ViewController: ARSCNViewDelegate{
         }
         }
         }
-       
+
         
     }
     
@@ -100,10 +96,11 @@ class ViewController: UIViewController  {
     @IBOutlet weak var augmentedRealityView: ARSCNView!
     @IBOutlet weak var homeButton: UIButton!
     
-
+//    @IBAction func takePhoto(_ sender: Any) {
+//        getSnapshotImage()
+//    }
     
     var selectedImage : [Paintings]?
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,6 +149,16 @@ class ViewController: UIViewController  {
                 imageInformationVC.imageInformation = actualSelectedImage
             }
         }
+    }
+}
+
+extension UIView {
+    func getSnapshotImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
+        drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let snapshotImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return snapshotImage
     }
 }
 
