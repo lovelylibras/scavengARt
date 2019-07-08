@@ -11,6 +11,7 @@ var visitedImages : [UIImage] = []
 
 extension ViewController: ARSCNViewDelegate{
     func renderer(_ renderer: SCNSceneRenderer, didAdd node:SCNNode, for anchor: ARAnchor) {
+        print("I am in here")
         DispatchQueue.main.async{
         guard let imageAnchor = anchor as? ARImageAnchor, let imageName = imageAnchor.name else { return }
         if(imageName == clues[0].name){
@@ -26,20 +27,30 @@ extension ViewController: ARSCNViewDelegate{
             let mainNode = SCNNode(geometry: mainPlane)
             mainNode.eulerAngles.x = -.pi/2
             mainNode.opacity = 1
-            
-          
-            self.highlightDetection(on: mainNode, width: physicalWidth, height: physicalHeight, completionHandler: {
-                self.performSegue(withIdentifier: "showImageInfo", sender: self)
-
-            })
             node.addChildNode(mainNode)
             let thumbNode = SuccessNode(withReferenceImage: imageAnchor.referenceImage)
-            thumbNode.renderingOrder = -1
             node.addChildNode(thumbNode)
+            thumbNode.isHidden = true
+            
             
             let shapeSpin = SCNAction.rotateBy(x: 0, y: 0, z: 2 * .pi, duration: 10)
             let repeatSpin = SCNAction.repeatForever(shapeSpin)
             thumbNode.runAction(repeatSpin)
+  
+          
+            self.highlightDetection(on: mainNode, width: physicalWidth, height:
+                physicalHeight, completionHandler: {
+                    DispatchQueue.main.async{
+                        print("I am in the completionHandler", Thread.current)
+                        self.performSegue(withIdentifier: "showImageInfo", sender: self)
+                        thumbNode.isHidden = false
+                    }
+                 
+
+            })
+           
+ 
+       
             
             
     

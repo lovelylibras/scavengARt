@@ -2,7 +2,7 @@ import Foundation
 
 class NewUserNetworkingService {
     
-    let baseUrl = "http://localhost:3030/api"
+    let baseUrl = "http://scavengart.herokuapp.com/api"
     
     func request(endpoint: String,
                  parameters: [String: Any],
