@@ -26,7 +26,7 @@ extension ViewController: ARSCNViewDelegate {
             
             let mainNode = SCNNode(geometry: mainPlane)
             mainNode.eulerAngles.x = -.pi/2
-            mainNode.opacity = 0
+            mainNode.opacity = 1
             
             node.addChildNode(mainNode)
             let thumbNode = SuccessNode(withReferenceImage: imageAnchor.referenceImage)
@@ -44,6 +44,7 @@ extension ViewController: ARSCNViewDelegate {
                     DispatchQueue.main.async{
                         print("I am in the completionHandler", Thread.current)
                         self.performSegue(withIdentifier: "showImageInfo", sender: self)
+                        mainNode.opacity = 0
                         thumbNode.isHidden = false
                     }
                  
