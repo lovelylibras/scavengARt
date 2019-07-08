@@ -22,7 +22,7 @@ class NewUserViewController: UIViewController {
     var user:String = ""
     
     let alertService = AlertService()
-    let networkingService = NewUserNetworkingService()
+    let networkingService = NetworkingService()
     
     
     override func viewDidLoad() {
@@ -41,6 +41,7 @@ class NewUserViewController: UIViewController {
             emailLabel.text = "Username:"
             userNameText.placeholder = "Enter Username"
         }
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         // Do any additional setup after loading the view.
     }
     
@@ -83,7 +84,7 @@ class NewUserViewController: UIViewController {
                           "userName":userName,
                           "password":password]
         
-        networkingService.request(endpoint: user == "teacher" ? "/teachers" : "/students", parameters: parameters) { (result) in
+        networkingService.request(endpoint: user == "teacher" ? "api/teachers" : "api/students", parameters: parameters) { (result) in
             
             switch result {
                 
