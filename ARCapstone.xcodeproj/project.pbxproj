@@ -22,8 +22,16 @@
 		960057EE22C584040006965D /* ARCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057ED22C584040006965D /* ARCapstoneUITests.swift */; };
 		960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FD22C6794A0006965D /* ImageInformationViewController.swift */; };
 		9600580022C67C6E0006965D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FF22C67C6E0006965D /* HomeViewController.swift */; };
+		CC363DE222D2C29E009E0B4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE122D2C29E009E0B4E /* LoginViewController.swift */; };
+		CC363DE422D2C705009E0B4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE322D2C705009E0B4E /* User.swift */; };
+		CC363DE722D2C72E009E0B4E /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE622D2C72E009E0B4E /* NetworkingService.swift */; };
 		CC383A8822CFD36E0056F416 /* ClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC383A8722CFD36E0056F416 /* ClueViewController.swift */; };
-		CC383A8A22CFE2AE0056F416 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC383A8922CFE2AE0056F416 /* GlobalVars.swift */; };
+		CCF1A53322D2D13B00CA0A90 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53222D2D13B00CA0A90 /* EntryViewController.swift */; };
+		CCF1A53522D2E21800CA0A90 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53422D2E21800CA0A90 /* ErrorResponse.swift */; };
+		CCF1A53722D2EA1A00CA0A90 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */; };
+		CCF1A53922D3010600CA0A90 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */; };
+		CCF1A53C22D3095600CA0A90 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53B22D3095600CA0A90 /* NewUserViewController.swift */; };
+		CCF1A53F22D3098A00CA0A90 /* NewUserNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53E22D3098A00CA0A90 /* NewUserNetworkingService.swift */; };
 		CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +74,16 @@
 		960057EF22C584040006965D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		960057FD22C6794A0006965D /* ImageInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInformationViewController.swift; sourceTree = "<group>"; };
 		960057FF22C67C6E0006965D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CC363DE122D2C29E009E0B4E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC363DE322D2C705009E0B4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CC363DE622D2C72E009E0B4E /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		CC383A8722CFD36E0056F416 /* ClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueViewController.swift; sourceTree = "<group>"; };
-		CC383A8922CFE2AE0056F416 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
+		CCF1A53222D2D13B00CA0A90 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		CCF1A53422D2E21800CA0A90 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		CCF1A53B22D3095600CA0A90 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		CCF1A53E22D3098A00CA0A90 /* NewUserNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserNetworkingService.swift; sourceTree = "<group>"; };
 		CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +151,10 @@
 				960057D422C584040006965D /* Assets.xcassets */,
 				960057CD22C584020006965D /* art.scnassets */,
 				CC383A8722CFD36E0056F416 /* ClueViewController.swift */,
-				CC383A8922CFE2AE0056F416 /* GlobalVars.swift */,
+				CCF1A53A22D3093800CA0A90 /* New User */,
+				CC363DE522D2C70C009E0B4E /* Login */,
+				CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */,
+				CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */,
 			);
 			path = ARCapstone;
 			sourceTree = "<group>";
@@ -156,6 +175,27 @@
 				960057EF22C584040006965D /* Info.plist */,
 			);
 			path = ARCapstoneUITests;
+			sourceTree = "<group>";
+		};
+		CC363DE522D2C70C009E0B4E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CC363DE122D2C29E009E0B4E /* LoginViewController.swift */,
+				CC363DE322D2C705009E0B4E /* User.swift */,
+				CC363DE622D2C72E009E0B4E /* NetworkingService.swift */,
+				CCF1A53222D2D13B00CA0A90 /* EntryViewController.swift */,
+				CCF1A53422D2E21800CA0A90 /* ErrorResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CCF1A53A22D3093800CA0A90 /* New User */ = {
+			isa = PBXGroup;
+			children = (
+				CCF1A53B22D3095600CA0A90 /* NewUserViewController.swift */,
+				CCF1A53E22D3098A00CA0A90 /* NewUserNetworkingService.swift */,
+			);
+			path = "New User";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,18 +330,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF1A53C22D3095600CA0A90 /* NewUserViewController.swift in Sources */,
+				CC363DE422D2C705009E0B4E /* User.swift in Sources */,
+				CCF1A53922D3010600CA0A90 /* DashboardViewController.swift in Sources */,
+				CC363DE222D2C29E009E0B4E /* LoginViewController.swift in Sources */,
 				CC383A8822CFD36E0056F416 /* ClueViewController.swift in Sources */,
 				960057D022C584020006965D /* ARViewController.swift in Sources */,
 				72A677AC22CFA4CA00019EC6 /* UILabel+Extensions.swift in Sources */,
-				CC383A8A22CFE2AE0056F416 /* GlobalVars.swift in Sources */,
+				CC363DE722D2C72E009E0B4E /* NetworkingService.swift in Sources */,
 				72A677AE22D0083200019EC6 /* StatusViewController.swift in Sources */,
+				CCF1A53522D2E21800CA0A90 /* ErrorResponse.swift in Sources */,
 				960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */,
 				72A677AA22CFA1E800019EC6 /* SuccessNode.swift in Sources */,
 				CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */,
 				960057CC22C584020006965D /* AppDelegate.swift in Sources */,
+				CCF1A53322D2D13B00CA0A90 /* EntryViewController.swift in Sources */,
+				CCF1A53722D2EA1A00CA0A90 /* AlertService.swift in Sources */,
 				72D1237722CBF8C800646B8B /* VisitedPaintingCell.swift in Sources */,
 				72A677A822CF9D3800019EC6 /* ImageDownloader.swift in Sources */,
 				9600580022C67C6E0006965D /* HomeViewController.swift in Sources */,
+				CCF1A53F22D3098A00CA0A90 /* NewUserNetworkingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
