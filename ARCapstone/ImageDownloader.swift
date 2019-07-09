@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import ARKit
 
+// HANDLES CONVERSION TO UIIMAGES AND DISTRIBUTES INTO ARREFERENCESET
 class ImageDownloader{
     typealias completionHandler = (Result<Set<ARReferenceImage>, Error>) -> ()
     typealias ImageData = (image: UIImage, orientation: CGImagePropertyOrientation, physicalWidth: CGFloat, name: String)
-
 
     static var receivedImageData = [ImageData]()
 
@@ -45,13 +45,12 @@ class ImageDownloader{
             completionOperation.addDependency(operation)
         }
         
-        operationQueue.addOperations(completionOperation.dependencies, waitUntilFinished: false)
+        operationQueue.addOperations(completionOperation.dependencies, waitUntilFinished: true)
         operationQueue.addOperation(completionOperation)
     }
 
     class func referenceImageFrom(_ downloadedData: [ImageData]) -> Set<ARReferenceImage>{
         var referenceImages = Set<ARReferenceImage>()
-        
         
         downloadedData.forEach {
             guard let cgImage = $0.image.cgImage else {return}

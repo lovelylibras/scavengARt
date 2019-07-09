@@ -2,6 +2,7 @@ import Foundation
 
 class NetworkingService {
     
+    // Sets base URL for requests
     let baseUrl = "http://scavengart.herokuapp.com/"
     
     func request(endpoint: String,
@@ -13,10 +14,9 @@ class NetworkingService {
             return
         }
         
+        // Sets variables
         var request = URLRequest(url: url)
-        
         var components = URLComponents()
-        
         var queryItems = [URLQueryItem]()
         
         for (key, value) in parameters {
@@ -48,7 +48,6 @@ class NetworkingService {
                     print("failure")
                 }
                 if let unwrappedError = error {
-                     print("I'm in unwrappedError")
                     completion(.failure(unwrappedError))
                    
                     return
@@ -59,11 +58,9 @@ class NetworkingService {
                         print(json)
                         
                         if let user = try? JSONDecoder().decode(User.self, from: unwrappedData) {
-                            print("user", user)
                             completion(.success(user))
                             
                         }else {
-                     print("I'm in unwrappedData")
                             let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: unwrappedData)
                             completion(.failure(errorResponse))
                            
@@ -77,10 +74,9 @@ class NetworkingService {
         }
         task.resume()
     }
-    
-    
 }
 
+// GIVE TYPES FOR ERRORS
 enum NetworkingError: Error {
     case badUrl
     case badResponse
