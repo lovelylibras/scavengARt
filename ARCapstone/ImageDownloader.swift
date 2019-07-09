@@ -20,7 +20,7 @@ class ImageDownloader{
         
         let operationQueue = OperationQueue()
         
-        operationQueue.maxConcurrentOperationCount = 6
+        operationQueue.maxConcurrentOperationCount = 8
         
         let completionOperation = BlockOperation {
             OperationQueue.main.addOperation({
