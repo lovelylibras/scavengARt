@@ -22,6 +22,10 @@
 		960057EE22C584040006965D /* ARCapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057ED22C584040006965D /* ARCapstoneUITests.swift */; };
 		960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FD22C6794A0006965D /* ImageInformationViewController.swift */; };
 		9600580022C67C6E0006965D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FF22C67C6E0006965D /* HomeViewController.swift */; };
+		9604182622D525640057AB93 /* firetest.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9604182422D525640057AB93 /* firetest.scnp */; };
+		9604182822D527930057AB93 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9604182722D527930057AB93 /* star.png */; };
+		96D626CB22D53D120010B213 /* vg.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D626CA22D53D120010B213 /* vg.png */; };
+		96D626CF22D53D2B0010B213 /* painting_VG.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 96D626CD22D53D2B0010B213 /* painting_VG.scnp */; };
 		CC363DE222D2C29E009E0B4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE122D2C29E009E0B4E /* LoginViewController.swift */; };
 		CC363DE422D2C705009E0B4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE322D2C705009E0B4E /* User.swift */; };
 		CC363DE722D2C72E009E0B4E /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE622D2C72E009E0B4E /* NetworkingService.swift */; };
@@ -73,6 +77,10 @@
 		960057EF22C584040006965D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		960057FD22C6794A0006965D /* ImageInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInformationViewController.swift; sourceTree = "<group>"; };
 		960057FF22C67C6E0006965D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9604182422D525640057AB93 /* firetest.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = firetest.scnp; sourceTree = "<group>"; };
+		9604182722D527930057AB93 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		96D626CA22D53D120010B213 /* vg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg.png; sourceTree = "<group>"; };
+		96D626CD22D53D2B0010B213 /* painting_VG.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = painting_VG.scnp; sourceTree = "<group>"; };
 		CC363DE122D2C29E009E0B4E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC363DE322D2C705009E0B4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CC363DE622D2C72E009E0B4E /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
@@ -140,6 +148,10 @@
 				960057CF22C584020006965D /* ARViewController.swift */,
 				960057FD22C6794A0006965D /* ImageInformationViewController.swift */,
 				72A677A922CFA1E800019EC6 /* SuccessNode.swift */,
+				9604182722D527930057AB93 /* star.png */,
+				9604182422D525640057AB93 /* firetest.scnp */,
+				96D626CA22D53D120010B213 /* vg.png */,
+				96D626CD22D53D2B0010B213 /* painting_VG.scnp */,
 				72A677AD22D0083200019EC6 /* StatusViewController.swift */,
 				72D1237622CBF8C800646B8B /* VisitedPaintingCell.swift */,
 				72A677AB22CFA4CA00019EC6 /* UILabel+Extensions.swift */,
@@ -299,9 +311,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D626CF22D53D2B0010B213 /* painting_VG.scnp in Resources */,
 				960057CE22C584020006965D /* art.scnassets in Resources */,
 				960057D822C584040006965D /* LaunchScreen.storyboard in Resources */,
 				960057D522C584040006965D /* Assets.xcassets in Resources */,
+				9604182622D525640057AB93 /* firetest.scnp in Resources */,
+				9604182822D527930057AB93 /* star.png in Resources */,
+				96D626CB22D53D120010B213 /* vg.png in Resources */,
 				960057D322C584020006965D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

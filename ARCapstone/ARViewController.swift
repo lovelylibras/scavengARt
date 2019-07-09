@@ -42,17 +42,21 @@ extension ViewController: ARSCNViewDelegate {
                 let repeatSpin = SCNAction.repeatForever(shapeSpin)
                 successNode.runAction(repeatSpin)
                 
-                print("VISITED NAMES BEFORE", visitedNames)
                 // Checks to make sure that the picture hasn't been visited AND is the target artwork
                 if (!visitedNames.contains(imageName) && clues[0].name == imageName) {
                     // Adds the name to the visitedNames list (used for Visited Paintings)
                     visitedNames.append(imageName)
-                    print("VISITED NAMES INSIDE", visitedNames)
                     // Adds the name to the visitedImages list (used for Visited Paintings)
                     visitedImages.append(imageDictionary[imageName]!)
-                    print("VISITED IMAGES INSIDE", visitedImages)
                     // Advances to the next clue
                     clues.remove(at: 0)
+                }
+                
+                if clues.isEmpty {
+                    let particle = SCNParticleSystem(named: "firetest.scnp", inDirectory: nil)!
+                    let particleNode = SCNNode()
+                    node.addChildNode(particleNode)
+                    particleNode.addParticleSystem(particle)
                 }
                 
                 // Calls the function that makes the flashing recognition plane and triggers the image information segue
