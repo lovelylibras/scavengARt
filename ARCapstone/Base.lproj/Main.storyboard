@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wgf-6c-14k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zv6-X4-vCx">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,9 +50,9 @@
                                                 <constraint firstAttribute="width" constant="145" id="xnf-Je-vLR"/>
                                             </constraints>
                                         </imageView>
-                                        <label autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aov-pz-lk7">
-                                            <rect key="frame" x="155" y="11" width="31" height="38"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="aov-pz-lk7">
+                                            <rect key="frame" x="155" y="11" width="26.333333333333343" height="38"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -102,13 +102,6 @@
                                     <segue destination="Zv6-X4-vCx" kind="show" identifier="museumSegue" id="GxA-mu-gCK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp4-Kw-OB7">
-                                <rect key="frame" x="163.5" y="595.5" width="48" height="48"/>
-                                <state key="normal" image="shutter"/>
-                                <connections>
-                                    <action selector="takePhoto:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CUL-Th-FMu"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clueDisplayLabel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUF-rX-AZd">
                                 <rect key="frame" x="62.666666666666657" y="106" width="249.99999999999997" height="20.333333333333329"/>
                                 <color key="backgroundColor" red="0.46666666670000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -127,16 +120,19 @@
                                     <segue destination="8pQ-2y-FFG" kind="presentation" id="FJT-eA-vV5"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="shw-fO-UGw">
+                                <rect key="frame" x="169" y="313" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.58823529411764708" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IUF-rX-AZd" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="E9R-FT-pMU"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
-                            <constraint firstItem="Wp4-Kw-OB7" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="LoK-S4-k13"/>
                             <constraint firstItem="IUF-rX-AZd" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" constant="-290" id="Thq-4y-OwQ"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
-                            <constraint firstItem="Wp4-Kw-OB7" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" constant="320" id="hYO-Eh-fwc"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
@@ -144,6 +140,7 @@
                     <connections>
                         <outlet property="augmentedRealityView" destination="BrB-h1-WRS" id="CBu-R5-Zqj"/>
                         <outlet property="clueDisplayLabel" destination="IUF-rX-AZd" id="fyy-hg-xrr"/>
+                        <outlet property="downloadSpinner" destination="shw-fO-UGw" id="7Rs-Yb-ozh"/>
                         <outlet property="homeButton" destination="dJ1-ds-1gf" id="SnU-Sg-J51"/>
                         <segue destination="aV3-k2-A8M" kind="presentation" identifier="showImageInfo" id="aTB-wX-Vwd"/>
                     </connections>
@@ -576,7 +573,7 @@
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="ceZ-jR-dy8"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="startSegue" id="ceZ-jR-dy8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -747,12 +744,11 @@
         <image name="dots" width="90" height="70"/>
         <image name="homeButton" width="90" height="70"/>
         <image name="scavengARt" width="479" height="140"/>
-        <image name="shutter" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="q5W-PD-fmJ"/>
         <segue reference="RtM-m7-R5i"/>
         <segue reference="PS2-HQ-xeD"/>
-        <segue reference="jvz-GD-skj"/>
+        <segue reference="1O4-U1-vTT"/>
     </inferredMetricsTieBreakers>
 </document>

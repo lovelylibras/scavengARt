@@ -3,7 +3,6 @@ import SceneKit
 import ARKit
 
 //global variables
-var images : [String: UIImage] = [:]
 var visitedNames : [String] = []
 var visitedImages : [UIImage] = []
 
@@ -11,9 +10,10 @@ var visitedImages : [UIImage] = []
 extension ViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node:SCNNode, for anchor: ARAnchor) {
         
+        guard let imageAnchor = anchor as? ARImageAnchor, let imageName = imageAnchor.name else { return }
+
         // IMAGE RECOGNITION & 3D RENDER:
         DispatchQueue.main.async{
-            guard let imageAnchor = anchor as? ARImageAnchor, let imageName = imageAnchor.name else { return }
             
             // Verifies that it is the target image
             if(imageName == clues[0].name){
@@ -42,6 +42,19 @@ extension ViewController: ARSCNViewDelegate {
                 let repeatSpin = SCNAction.repeatForever(shapeSpin)
                 successNode.runAction(repeatSpin)
                 
+                print("VISITED NAMES BEFORE", visitedNames)
+                // Checks to make sure that the picture hasn't been visited AND is the target artwork
+                if (!visitedNames.contains(imageName) && clues[0].name == imageName) {
+                    // Adds the name to the visitedNames list (used for Visited Paintings)
+                    visitedNames.append(imageName)
+                    print("VISITED NAMES INSIDE", visitedNames)
+                    // Adds the name to the visitedImages list (used for Visited Paintings)
+                    visitedImages.append(imageDictionary[imageName]!)
+                    print("VISITED IMAGES INSIDE", visitedImages)
+                    // Advances to the next clue
+                    clues.remove(at: 0)
+                }
+                
                 // Calls the function that makes the flashing recognition plane and triggers the image information segue
                 self.highlightDetection(on: mainNode, width: physicalWidth, height: physicalHeight, completionHandler: {
                     DispatchQueue.main.async{
@@ -51,15 +64,8 @@ extension ViewController: ARSCNViewDelegate {
                         successNode.isHidden = false
                     }
                 })
-                // Checks to make sure that the picture hasn't been visited AND is the target artwork
-                if (!visitedNames.contains(imageName) && clues[0].name == imageName) {
-                    // Adds the name to the visitedNames list (used for Visited Paintings)
-                    visitedNames.append(imageName)
-                    // Adds the name to the visitedImages list (used for Visited Paintings)
-                    visitedImages.append(images[imageName]!)
-                    // Advances to the next clue
-                    clues.remove(at: 0)
-                }
+            } else {
+                self.augmentedRealityView.session.remove(anchor: imageAnchor)
             }
         }
     }
@@ -105,6 +111,12 @@ class ViewController: UIViewController  {
     @IBOutlet weak var augmentedRealityView: ARSCNView!
     @IBOutlet weak var homeButton: UIButton!
     
+    @IBOutlet weak var downloadSpinner: UIActivityIndicatorView! {
+        didSet {
+            downloadSpinner.alpha = 0
+        }
+    }
+    
     // STATE FOR SELECTED IMAGE
     var selectedImage : [Paintings]?
     
@@ -119,9 +131,9 @@ class ViewController: UIViewController  {
         
         // Display for current clue or success message
         if clues.isEmpty {
-            clueDisplayLabel.text = "You found all the paintings!!!!!! "
+            clueDisplayLabel.text = "You found all the paintings!!!!!!"
         } else {
-             clueDisplayLabel.text = "Find \(clues[0].name)"
+            clueDisplayLabel.text = "Find \(clues[0].name)"
         }
     }
 
@@ -134,13 +146,23 @@ class ViewController: UIViewController  {
     
     // SPEAKS TO IMAGEDOWNLOADER TO SET REFERENCE IMAGES
     func generateImagesFromServer(){
+        
+        self.downloadSpinner.alpha = 1
+        self.downloadSpinner.startAnimating()
+        
         ImageDownloader.downloadImagesFromPaths { (result) in
             switch result{
                 
             case .success(let dynamicContent):
-                self.augmentedRealityConfiguration.maximumNumberOfTrackedImages = arrOfArt.count
+                self.augmentedRealityConfiguration.maximumNumberOfTrackedImages = 10
                 self.augmentedRealityConfiguration.detectionImages = dynamicContent
                 self.augmentedRealitySession.run(self.augmentedRealityConfiguration, options: [.resetTracking, .removeExistingAnchors])
+                
+                DispatchQueue.main.async {
+                    self.downloadSpinner.alpha = 0
+                    self.downloadSpinner.stopAnimating()
+                }
+                
                 print("It was a success!!!!!")
             case .failure(let error):
                 print("An Error Occured Generating The Dynamic Reference Images \(error)")
