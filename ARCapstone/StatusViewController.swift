@@ -2,12 +2,17 @@ import UIKit
 
 class StatusViewController: UITableViewController {
     
+    @IBOutlet weak var visitedStatus: UILabel!
+    
     // CONTROLS STATUS TABLE VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        self.visitedStatus.text = "Visited Paintings  |  \(visitedNames.count) of \(arrOfArt.count)"
+
     }
     
     // Sets the height of the cell
@@ -32,6 +37,7 @@ class StatusViewController: UITableViewController {
         cell.PaintingLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
         cell.PaintingLabel.text = visitedNames[row]
         cell.PaintingView.image = visitedImages[row]
+        
         return cell
     }
     
