@@ -16,7 +16,7 @@ class ImageInformationViewController: UIViewController {
 
         // Distributes information to appropriate display fields
         if let actualImageInformation = imageInformation {
-            self.imageView.image = images[actualImageInformation[0].name]
+            self.imageView.image = imageDictionary[actualImageInformation[0].name]
             self.nameLabel.text = actualImageInformation[0].name
             self.artistLabel.text = actualImageInformation[0].artist
             self.descLabel.text = actualImageInformation[0].description

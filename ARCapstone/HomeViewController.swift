@@ -2,6 +2,8 @@ import UIKit
 import ARKit
 
 // GLOBAL VARIABLES
+var imageDictionary : [String: UIImage] = [:]
+
 struct Hunt: Decodable {
     let name:String
     let description:String
@@ -51,4 +53,5 @@ class HomeViewController: UIViewController {
             imageFetchingGroup.leave()
         }.resume()
     }
+    
 }
