@@ -207,11 +207,6 @@ class ViewController: UIViewController  {
                 imageInformationVC.imageInformation = actualSelectedImage
             }
         }
-//        if segue.identifier == "tableViewIdentifier" {
-//            if let statusVC = segue.destination as? StatusViewController {
-//                print("VISITED NAMES: ", visitedNames.count, "ARROFART: ", arrOfArt.count)
-//            }
-//        }
     }
 }
 
