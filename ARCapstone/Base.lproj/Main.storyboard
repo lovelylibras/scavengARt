@@ -98,7 +98,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Home" image="homeButton"/>
                                 <connections>
-                                    <segue destination="Zv6-X4-vCx" kind="show" id="GxA-mu-gCK"/>
+                                    <action selector="homeAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="wdg-LA-uNo"/>
+                                    <segue destination="Zv6-X4-vCx" kind="show" identifier="museumSegue" id="GxA-mu-gCK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp4-Kw-OB7">
