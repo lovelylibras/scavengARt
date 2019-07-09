@@ -10,25 +10,16 @@ import UIKit
 
 class DashboardViewController: UIViewController {
     
+    // INITIALIZES USER
     var user = User(id: 0, name: "", userName: "")
+    
+    // OUTLET FOR UI ELEMENTS
     @IBOutlet weak var welcomeText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set text for welcoming user
         welcomeText.text = "Welcome, \(user.name)"
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class EntryViewController: UIViewController {
 
     @IBAction func teacherSelect(_ sender: UIButton) {
@@ -19,9 +17,9 @@ class EntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
+    // PREPARES FOR SEGUE DEPENDING ON USER TYPE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          guard let loginVC = segue.destination as? LoginViewController else {return}
         if segue.identifier == "teacher" {
@@ -30,15 +28,4 @@ class EntryViewController: UIViewController {
            loginVC.user = "student"
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

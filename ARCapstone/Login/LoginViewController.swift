@@ -10,15 +10,16 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    
+    // OUTLETS FOR UI ELEMENTS
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var userNameValidate: UILabel!
     @IBOutlet weak var passwordValidate: UILabel!
     
-    
+    // INITIALIZES USER TYPE
     var user:String = ""
-
 
     let alertService = AlertService()
     let networkingService = NetworkingService()
@@ -28,10 +29,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         print("user at viewDidLoad", user)
         
-//        loginButton.isEnabled = false
         userNameValidate.isHidden = true
         passwordValidate.isHidden = true
         
+        // Sets conditional for user types – teacher or student
         if(user == "teacher") {
             userNameTextField.placeholder = "Enter Email"
         } else {
@@ -39,19 +40,16 @@ class LoginViewController: UIViewController {
         }
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-
-        // Do any additional setup after loading the view.
     }
     
+    // VALIDATES USERS
     func isValidEmail(email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"Self MATCHES %@", emailRegEx)
         return emailTest.evaluate(with:email)
     }
 
-    
- 
-    
+    // HANDLES LOG IN & VALIDATES INPUT
     @IBAction func didTapLoginBtn(_ sender: Any) {
         userNameValidate.isHidden = true
         passwordValidate.isHidden = true
@@ -75,30 +73,24 @@ class LoginViewController: UIViewController {
         let parameters = ["userName":userName,
                           "password":password]
         
+        // GET REQUEST FOR EXISTING USER
         networkingService.request(endpoint: user == "teacher" ? "auth/teacher-login" : "auth/student-login", parameters: parameters) { (result) in
-            
             switch result {
-                
             case .success(let user): self.performSegue(withIdentifier: "loginSegue", sender: user)
-                
             case .failure(let error):
                  let alert = self.alertService.alert(message: error.localizedDescription)
                 self.present(alert, animated: true)
             }
         }
-        
     }
     
-    //use below to send user into app
+    // SEGUE TO HOME ONCE USER IS LOGGED IN
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let newUserVC = segue.destination as? NewUserViewController {
             newUserVC.user = self.user
         }
         if let dashboardVC = segue.destination as? DashboardViewController, let user = sender as? User {
-
             dashboardVC.user = user
         }
     }
-    
-
 }
