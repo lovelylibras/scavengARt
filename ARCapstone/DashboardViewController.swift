@@ -5,11 +5,12 @@
 //  Created by Rachel on 7/8/19.
 //  Copyright © 2019 Audra Kenney. All rights reserved.
 //
-
+import CoreLocation
 import UIKit
 
-class DashboardViewController: UIViewController {
-    
+class DashboardViewController: UIViewController, CLLocationManagerDelegate {
+    let locationManager:CLLocationManager = CLLocationManager()
+
     // INITIALIZES USER
     var user = User(id: 0, name: "", userName: "")
     
@@ -18,7 +19,9 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+
         // Set text for welcoming user
         welcomeText.text = "Welcome, \(user.name)"
     }
