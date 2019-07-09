@@ -92,7 +92,7 @@ class ViewController: UIViewController  {
     
     var augmentedRealityConfiguration = ARWorldTrackingConfiguration()
     var augmentedRealitySession = ARSession()
-    
+    let homeAlert = HomeAlert()
     @IBOutlet weak var clueDisplayLabel: UILabel!
     @IBOutlet weak var augmentedRealityView: ARSCNView!
     @IBOutlet weak var homeButton: UIButton!
@@ -142,6 +142,31 @@ class ViewController: UIViewController  {
             }
         }
     }
+    
+    
+    @IBAction func homeAction(_ sender: Any) {
+        alert(title: "Are you sure you want to leave?", message: "Your progress will not be saved", completion: { result in
+            if result {
+                self.performSegue(withIdentifier: "museumSegue", sender: self)
+            }
+        })
+        
+    }
+    func alert (title: String, message: String, completion: @escaping ((Bool) -> Void)) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Leave game", style: .default, handler: { (action) in
+            alertController.dismiss(animated: true, completion: nil)
+            completion(true) // true signals "YES"
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Keep playing", style: UIAlertAction.Style.default, handler: { (action) in
+            alertController.dismiss(animated: true, completion: nil)
+            completion(false) // false singals "NO"
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showImageInfo" {
             if let imageInformationVC = segue.destination as? ImageInformationViewController,

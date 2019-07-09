@@ -30,6 +30,7 @@
 		CCF1A53722D2EA1A00CA0A90 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */; };
 		CCF1A53922D3010600CA0A90 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */; };
 		CCF1A53C22D3095600CA0A90 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53B22D3095600CA0A90 /* NewUserViewController.swift */; };
+		CCF1A54322D40C0100CA0A90 /* HomeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A54222D40C0100CA0A90 /* HomeAlert.swift */; };
 		CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		CCF1A53B22D3095600CA0A90 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		CCF1A54222D40C0100CA0A90 /* HomeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlert.swift; sourceTree = "<group>"; };
 		CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,7 @@
 				CCF1A53A22D3093800CA0A90 /* New User */,
 				CC363DE522D2C70C009E0B4E /* Login */,
 				CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */,
+				CCF1A54222D40C0100CA0A90 /* HomeAlert.swift */,
 				CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */,
 			);
 			path = ARCapstone;
@@ -340,6 +343,7 @@
 				CCF1A53322D2D13B00CA0A90 /* EntryViewController.swift in Sources */,
 				CCF1A53722D2EA1A00CA0A90 /* AlertService.swift in Sources */,
 				72D1237722CBF8C800646B8B /* VisitedPaintingCell.swift in Sources */,
+				CCF1A54322D40C0100CA0A90 /* HomeAlert.swift in Sources */,
 				72A677A822CF9D3800019EC6 /* ImageDownloader.swift in Sources */,
 				9600580022C67C6E0006965D /* HomeViewController.swift in Sources */,
 			);
@@ -517,13 +521,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UJAY983CW;
+				DEVELOPMENT_TEAM = 2Q3S9WKM57;
 				INFOPLIST_FILE = ARCapstone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AKCapstone;
+				PRODUCT_BUNDLE_IDENTIFIER = rreincapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -535,13 +539,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UJAY983CW;
+				DEVELOPMENT_TEAM = 2Q3S9WKM57;
 				INFOPLIST_FILE = ARCapstone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AKCapstone;
+				PRODUCT_BUNDLE_IDENTIFIER = rreincapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
