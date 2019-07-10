@@ -87,7 +87,7 @@ class MuseumViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             self.performSegue(withIdentifier: "startHunt", sender: self)
         } else {
-            let alert = self.alertService.alert(message: "Looks like you're not at the Met Museum! Make sure you're at the Met Museum before starting the hunt.")
+            let alert = self.alertService.alert(message: "Looks like you're not at the Met Museum! Make sure you're at the Met before starting the hunt.")
             self.present(alert, animated: true)
         }
     }
@@ -109,7 +109,7 @@ class MuseumViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             self.performSegue(withIdentifier: "startHunt", sender: self)
         } else {
-            let alert = self.alertService.alert(message: "Looks like you're not at the Whitney Museum! Make sure you're at the Whintey before starting the hunt.")
+            let alert = self.alertService.alert(message: "Looks like you're not at the Whitney Museum! Make sure you're at the Whitney before starting the hunt.")
             self.present(alert, animated: true)
         }
     }
