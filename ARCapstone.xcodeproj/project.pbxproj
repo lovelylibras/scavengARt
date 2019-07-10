@@ -29,6 +29,7 @@
 		CC363DE222D2C29E009E0B4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE122D2C29E009E0B4E /* LoginViewController.swift */; };
 		CC363DE422D2C705009E0B4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE322D2C705009E0B4E /* User.swift */; };
 		CC363DE722D2C72E009E0B4E /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE622D2C72E009E0B4E /* NetworkingService.swift */; };
+		CCB8A00522D5808100EF7ABA /* 58791-birthday-paper-confetti-party-cartoon-happy.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB8A00422D5808100EF7ABA /* 58791-birthday-paper-confetti-party-cartoon-happy.png */; };
 		CCF1A53322D2D13B00CA0A90 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53222D2D13B00CA0A90 /* EntryViewController.swift */; };
 		CCF1A53522D2E21800CA0A90 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53422D2E21800CA0A90 /* ErrorResponse.swift */; };
 		CCF1A53722D2EA1A00CA0A90 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */; };
@@ -84,6 +85,7 @@
 		CC363DE122D2C29E009E0B4E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC363DE322D2C705009E0B4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CC363DE622D2C72E009E0B4E /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		CCB8A00422D5808100EF7ABA /* 58791-birthday-paper-confetti-party-cartoon-happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "58791-birthday-paper-confetti-party-cartoon-happy.png"; sourceTree = "<group>"; };
 		CCF1A53222D2D13B00CA0A90 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		CCF1A53422D2E21800CA0A90 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				9604182722D527930057AB93 /* star.png */,
 				9604182422D525640057AB93 /* firetest.scnp */,
 				96D626CA22D53D120010B213 /* vg.png */,
+				CCB8A00422D5808100EF7ABA /* 58791-birthday-paper-confetti-party-cartoon-happy.png */,
 				96D626CD22D53D2B0010B213 /* painting_VG.scnp */,
 				72A677AD22D0083200019EC6 /* StatusViewController.swift */,
 				72D1237622CBF8C800646B8B /* VisitedPaintingCell.swift */,
@@ -318,6 +321,7 @@
 				9604182622D525640057AB93 /* firetest.scnp in Resources */,
 				9604182822D527930057AB93 /* star.png in Resources */,
 				96D626CB22D53D120010B213 /* vg.png in Resources */,
+				CCB8A00522D5808100EF7ABA /* 58791-birthday-paper-confetti-party-cartoon-happy.png in Resources */,
 				960057D322C584020006965D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,13 +541,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UJAY983CW;
+				DEVELOPMENT_TEAM = 2Q3S9WKM57;
 				INFOPLIST_FILE = ARCapstone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AKCapstone;
+				PRODUCT_BUNDLE_IDENTIFIER = rreincapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -555,13 +559,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UJAY983CW;
+				DEVELOPMENT_TEAM = 2Q3S9WKM57;
 				INFOPLIST_FILE = ARCapstone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AKCapstone;
+				PRODUCT_BUNDLE_IDENTIFIER = rreincapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

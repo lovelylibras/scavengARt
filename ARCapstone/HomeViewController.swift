@@ -21,7 +21,10 @@ var arrOfArt: [Paintings] = []
 var clues: [Paintings] = []
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var paintingsToFindLabel: UILabel!
+    
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         
         // API CALL TO DATABASE TO LOAD ARTWORK
@@ -51,6 +54,9 @@ class HomeViewController: UIViewController {
                 print("Error serializing json", jsonErr)
             }
             imageFetchingGroup.leave()
+            imageFetchingGroup.notify(queue: .main) {
+                self.paintingsToFindLabel.text = "You have \(arrOfArt.count) paintings to find."
+            }
         }.resume()
     }
     
