@@ -87,7 +87,9 @@ class NewUserViewController: UIViewController {
         networkingService.request(endpoint: user == "teacher" ? "api/teachers" : "api/students", parameters: parameters) { (result) in
             
             switch result {
-            case .success(let user): self.performSegue(withIdentifier: "newUserSegue", sender: user)
+            case .success(let user):
+                userNameGlobal = user.name
+                self.performSegue(withIdentifier: "newUserSegue", sender: user)
             case .failure(let error):
                 let alert = self.alertService.alert(message: error.localizedDescription)
                 self.present(alert, animated: true)

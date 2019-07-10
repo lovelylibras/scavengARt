@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class LoginViewController: UIViewController {
 
     
@@ -20,6 +22,8 @@ class LoginViewController: UIViewController {
     
     // INITIALIZES USER TYPE
     var user:String = ""
+   
+    
 
     let alertService = AlertService()
     let networkingService = NetworkingService()
@@ -76,7 +80,9 @@ class LoginViewController: UIViewController {
         // GET REQUEST FOR EXISTING USER
         networkingService.request(endpoint: user == "teacher" ? "auth/teacher-login" : "auth/student-login", parameters: parameters) { (result) in
             switch result {
-            case .success(let user): self.performSegue(withIdentifier: "loginSegue", sender: user)
+            case .success(let user):
+                userNameGlobal = user.name
+                self.performSegue(withIdentifier: "loginSegue", sender: user)
             case .failure(let error):
                  let alert = self.alertService.alert(message: error.localizedDescription)
                 self.present(alert, animated: true)

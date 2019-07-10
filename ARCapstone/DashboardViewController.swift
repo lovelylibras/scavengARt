@@ -8,21 +8,25 @@
 import CoreLocation
 import UIKit
 
+var userNameGlobal:String = ""
+
 class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager:CLLocationManager = CLLocationManager()
 
     // INITIALIZES USER
     var user = User(id: 0, name: "", userName: "")
+
     
     // OUTLET FOR UI ELEMENTS
     @IBOutlet weak var welcomeText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
 
         // Set text for welcoming user
-        welcomeText.text = "Welcome, \(user.name)"
+        welcomeText.text = "Welcome, \(userNameGlobal)"
     }
 }
