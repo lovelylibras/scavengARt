@@ -32,7 +32,7 @@ extension ViewController: ARSCNViewDelegate {
                 mainPlane.firstMaterial?.colorBufferWriteMask = .alpha
                 let mainNode = SCNNode(geometry: mainPlane)
                 mainNode.eulerAngles.x = -.pi/2
-                mainNode.opacity = 1
+                mainNode.opacity = 0.75
                 node.addChildNode(mainNode)
                 
                 // Renders the trophy object node on the node
@@ -81,7 +81,7 @@ extension ViewController: ARSCNViewDelegate {
     func highlightDetection(on rootNode: SCNNode, width: CGFloat, height: CGFloat, completionHandler block: @escaping (() -> Void)) {
         let planeNode = SCNNode(geometry: SCNPlane(width: width, height: height))
         planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.white
-        planeNode.position.z += 0.1
+        // planeNode.position.z += 0.1
         planeNode.opacity = 0
         
         rootNode.addChildNode(planeNode)
@@ -94,9 +94,9 @@ extension ViewController: ARSCNViewDelegate {
     var imageHighlightAction: SCNAction {
         return .sequence([
             .wait(duration: 0.25),
-            .fadeOpacity(to: 0.85, duration: 0.25),
+            .fadeOpacity(to: 0.65, duration: 0.25),
             .fadeOpacity(to: 0.15, duration: 0.25),
-            .fadeOpacity(to: 0.85, duration: 0.25),
+            .fadeOpacity(to: 0.65, duration: 0.25),
             .fadeOut(duration: 0.5),
             .removeFromParentNode()
             ])
