@@ -8,6 +8,7 @@ var visitedImages : [UIImage] = []
 
 
 extension ViewController: ARSCNViewDelegate {
+    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node:SCNNode, for anchor: ARAnchor) {
         
         guard let imageAnchor = anchor as? ARImageAnchor, let imageName = imageAnchor.name else { return }
@@ -17,6 +18,8 @@ extension ViewController: ARSCNViewDelegate {
             
             // Verifies that it is the target image
             if(imageName == clues[0].name){
+                self.impact.impactOccurred()
+
             let scannedImage = arrOfArt.filter({$0.name == imageName})
             self.selectedImage = scannedImage
                 
@@ -111,6 +114,7 @@ class ViewController: UIViewController  {
     let homeAlert = HomeAlert()
 
     // OUTLETS FOR UI ELEMENTS
+    let impact = UIImpactFeedbackGenerator(style: .heavy)
     @IBOutlet weak var clueDisplayLabel: UILabel!
     @IBOutlet weak var augmentedRealityView: ARSCNView!
     @IBOutlet weak var homeButton: UIButton!
@@ -133,7 +137,8 @@ class ViewController: UIViewController  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Display for current clue or success message
+//        clueDisplayLabel.layer.cornerRadius = 5
+//        clueDisplayLabel.clipsToBounds = true
         if clues.isEmpty {
             clueDisplayLabel.text = "You found all the paintings!!!!!!"
         } else {
