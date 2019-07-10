@@ -20,6 +20,9 @@ class MuseumViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 100
         
+        visitedNames = []
+        visitedImages = []
+        
         let jsonUrlString = "http://scavengart.herokuapp.com/api/museums"
         
         guard let url = URL(string: jsonUrlString) else { return }
@@ -83,35 +86,41 @@ class MuseumViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func TheMet(_ sender: UIButton) {
         museum = "1"
-        if visitedMuseums.contains("The Metropolitan Museum of Art") || visitedMuseums.contains("Fullstack Academy") {
-            locationManager.stopUpdatingLocation()
-            self.performSegue(withIdentifier: "startHunt", sender: self)
-        } else {
-            let alert = self.alertService.alert(message: "Looks like you're not at the Met Museum! Make sure you're at the Met before starting the hunt.")
-            self.present(alert, animated: true)
-        }
+        self.performSegue(withIdentifier: "startHunt", sender: self)
+
+//        if visitedMuseums.contains("The Metropolitan Museum of Art") || visitedMuseums.contains("Fullstack Academy") {
+//            locationManager.stopUpdatingLocation()
+//            self.performSegue(withIdentifier: "startHunt", sender: self)
+//        } else {
+//            let alert = self.alertService.alert(message: "Looks like you're not at the Met Museum! Make sure you're at the Met before starting the hunt.")
+//            self.present(alert, animated: true)
+//        }
     }
     
     @IBAction func MOMA(_ sender: UIButton) {
         museum = "2"
-        if visitedMuseums.contains("The Museum of Modern Art") {
-            locationManager.stopUpdatingLocation()
-            self.performSegue(withIdentifier: "startHunt", sender: self)
-        } else {
-            let alert = self.alertService.alert(message: "Looks like you're not at the Museum of Modern Art! Make sure you're at the MOMA before starting the hunt.")
-            self.present(alert, animated: true)
-        }
+        self.performSegue(withIdentifier: "startHunt", sender: self)
+
+//        if visitedMuseums.contains("The Museum of Modern Art") {
+//            locationManager.stopUpdatingLocation()
+//            self.performSegue(withIdentifier: "startHunt", sender: self)
+//        } else {
+//            let alert = self.alertService.alert(message: "Looks like you're not at the Museum of Modern Art! Make sure you're at the MOMA before starting the hunt.")
+//            self.present(alert, animated: true)
+//        }
     }
     
     @IBAction func TheWhitney(_ sender: UIButton) {
         museum = "3"
-        if visitedMuseums.contains("The Whitney Museum of American Art") {
-            locationManager.stopUpdatingLocation()
-            self.performSegue(withIdentifier: "startHunt", sender: self)
-        } else {
-            let alert = self.alertService.alert(message: "Looks like you're not at the Whitney Museum! Make sure you're at the Whitney before starting the hunt.")
-            self.present(alert, animated: true)
-        }
+        self.performSegue(withIdentifier: "startHunt", sender: self)
+
+//        if visitedMuseums.contains("The Whitney Museum of American Art") {
+//            locationManager.stopUpdatingLocation()
+//            self.performSegue(withIdentifier: "startHunt", sender: self)
+//        } else {
+//            let alert = self.alertService.alert(message: "Looks like you're not at the Whitney Museum! Make sure you're at the Whitney before starting the hunt.")
+//            self.present(alert, animated: true)
+//        }
     }
 
 }
