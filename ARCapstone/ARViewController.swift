@@ -176,11 +176,15 @@ class ViewController: UIViewController  {
     
     // ALERT FOR LEAVING GAME
     @IBAction func homeAction(_ sender: Any) {
-        alert(title: "Are you sure you want to leave?", message: "Your progress will not be saved", completion: { result in
-            if result {
-                self.performSegue(withIdentifier: "museumSegue", sender: self)
-            }
-        })
+        if(!clues.isEmpty) {
+            alert(title: "Are you sure you want to leave?", message: "Your progress will not be saved", completion: { result in
+                if result {
+                    self.performSegue(withIdentifier: "museumSegue", sender: self)
+                }
+            })
+        } else {
+            self.performSegue(withIdentifier: "museumSegue", sender: self)
+        }
     }
   
     func alert (title: String, message: String, completion: @escaping ((Bool) -> Void)) {
