@@ -110,8 +110,9 @@ class ViewController: UIViewController  {
     // VARIABLES FOR AR SCENE/SESSION
     var augmentedRealityConfiguration = ARWorldTrackingConfiguration()
     var augmentedRealitySession = ARSession()
-
-    let homeAlert = HomeAlert()
+    
+    let alertService = AlertService()
+    let networkingService = CompletedGameNetworkingService()
 
     // OUTLETS FOR UI ELEMENTS
     let impact = UIImpactFeedbackGenerator(style: .heavy)
@@ -188,7 +189,22 @@ class ViewController: UIViewController  {
                 }
             })
         } else {
-            self.performSegue(withIdentifier: "museumSegue", sender: self)
+           
+            
+            networkingService.request(endpoint: "api/games/\(userGlobal.id)/\(museum)") { (result) in
+                switch result {
+                case .success(let game):
+                    print("game inside AR", game)
+                    self.performSegue(withIdentifier: "museumSegue", sender: self)
+                case .failure(let error):
+                    let alert = self.alertService.alert(message: error.localizedDescription)
+                    self.present(alert, animated: true)
+                }
+            }
+            
+            
+            
+            
         }
     }
   

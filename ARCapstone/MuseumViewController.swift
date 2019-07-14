@@ -86,28 +86,26 @@ class MuseumViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func TheMet(_ sender: UIButton) {
         museum = "1"
-        self.performSegue(withIdentifier: "startHunt", sender: self)
 
-//        if visitedMuseums.contains("The Metropolitan Museum of Art") || visitedMuseums.contains("Fullstack Academy") {
-//            locationManager.stopUpdatingLocation()
-//            self.performSegue(withIdentifier: "startHunt", sender: self)
-//        } else {
-//            let alert = self.alertService.alert(message: "Looks like you're not at the Met Museum! Make sure you're at the Met before starting the hunt.")
-//            self.present(alert, animated: true)
-//        }
+        if visitedMuseums.contains("The Metropolitan Museum of Art")  {
+            locationManager.stopUpdatingLocation()
+            self.performSegue(withIdentifier: "startHunt", sender: self)
+        } else {
+            let alert = self.alertService.alert(message: "Looks like you're not at the Met Museum! Make sure you're at the Met before starting the hunt.")
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func MOMA(_ sender: UIButton) {
         museum = "2"
-        self.performSegue(withIdentifier: "startHunt", sender: self)
-
-//        if visitedMuseums.contains("The Museum of Modern Art") {
-//            locationManager.stopUpdatingLocation()
-//            self.performSegue(withIdentifier: "startHunt", sender: self)
-//        } else {
-//            let alert = self.alertService.alert(message: "Looks like you're not at the Museum of Modern Art! Make sure you're at the MOMA before starting the hunt.")
-//            self.present(alert, animated: true)
-//        }
+//        self.performSegue(withIdentifier: "startHunt", sender: self)
+        if visitedMuseums.contains("The Museum of Modern Art") {
+            locationManager.stopUpdatingLocation()
+            self.performSegue(withIdentifier: "startHunt", sender: self)
+        } else {
+            let alert = self.alertService.alert(message: "Looks like you're not at the Museum of Modern Art! Make sure you're at the MOMA before starting the hunt.")
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func TheWhitney(_ sender: UIButton) {

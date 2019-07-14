@@ -38,8 +38,8 @@ class NewUserViewController: UIViewController {
             emailLabel.text = "Email:"
             userNameText.placeholder = "Enter Email"
         } else {
-            emailLabel.text = "Username:"
-            userNameText.placeholder = "Enter Username"
+            emailLabel.text = "Email:"
+            userNameText.placeholder = "Enter Email"
         }
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
@@ -100,7 +100,7 @@ class NewUserViewController: UIViewController {
     // SEGUE TO HOME ONCE USER IS SIGNED UP
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dashboardVC = segue.destination as? DashboardViewController, let user = sender as? User {
-            dashboardVC.user = user
+            userGlobal = user
         }
     }
 }

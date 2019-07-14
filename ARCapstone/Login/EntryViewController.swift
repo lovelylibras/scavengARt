@@ -25,7 +25,7 @@ class EntryViewController: UIViewController {
         if segue.identifier == "teacher" {
             loginVC.user = "teacher"
         }else if segue.identifier == "student" {
-           loginVC.user = "student"
+           loginVC.user = "teacher"
         }
     }
 }
