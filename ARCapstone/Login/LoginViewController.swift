@@ -81,7 +81,7 @@ class LoginViewController: UIViewController {
         networkingService.request(endpoint: user == "teacher" ? "auth/teacher-login" : "auth/student-login", parameters: parameters) { (result) in
             switch result {
             case .success(let user):
-                userNameGlobal = user.name
+                userGlobal = user
                 self.performSegue(withIdentifier: "loginSegue", sender: user)
             case .failure(let error):
                  let alert = self.alertService.alert(message: error.localizedDescription)

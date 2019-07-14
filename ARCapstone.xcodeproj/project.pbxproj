@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		72A677A822CF9D3800019EC6 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A677A722CF9D3800019EC6 /* ImageDownloader.swift */; };
 		72A677AA22CFA1E800019EC6 /* SuccessNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A677A922CFA1E800019EC6 /* SuccessNode.swift */; };
-		72A677AC22CFA4CA00019EC6 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A677AB22CFA4CA00019EC6 /* UILabel+Extensions.swift */; };
 		72A677AE22D0083200019EC6 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A677AD22D0083200019EC6 /* StatusViewController.swift */; };
 		72D1237722CBF8C800646B8B /* VisitedPaintingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D1237622CBF8C800646B8B /* VisitedPaintingCell.swift */; };
 		960057CC22C584020006965D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057CB22C584020006965D /* AppDelegate.swift */; };
@@ -24,6 +23,11 @@
 		9600580022C67C6E0006965D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960057FF22C67C6E0006965D /* HomeViewController.swift */; };
 		9604182622D525640057AB93 /* firetest.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9604182422D525640057AB93 /* firetest.scnp */; };
 		9604182822D527930057AB93 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9604182722D527930057AB93 /* star.png */; };
+		CC32D1E322D7BA7000994618 /* HuntsNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32D1E222D7BA7000994618 /* HuntsNetworkingService.swift */; };
+		CC32D1E522D7BAA000994618 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32D1E422D7BAA000994618 /* Game.swift */; };
+		CC32D1E922D7CD3200994618 /* CompletedHuntsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32D1E822D7CD3200994618 /* CompletedHuntsViewController.swift */; };
+		CC32D1EB22D8BA5E00994618 /* CompletedHuntCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32D1EA22D8BA5E00994618 /* CompletedHuntCellTableViewCell.swift */; };
+		CC32D1ED22D8CA5700994618 /* completedGameNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32D1EC22D8CA5700994618 /* completedGameNetworkingService.swift */; };
 		CC363DE222D2C29E009E0B4E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE122D2C29E009E0B4E /* LoginViewController.swift */; };
 		CC363DE422D2C705009E0B4E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE322D2C705009E0B4E /* User.swift */; };
 		CC363DE722D2C72E009E0B4E /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC363DE622D2C72E009E0B4E /* NetworkingService.swift */; };
@@ -33,7 +37,6 @@
 		CCF1A53722D2EA1A00CA0A90 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */; };
 		CCF1A53922D3010600CA0A90 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */; };
 		CCF1A53C22D3095600CA0A90 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A53B22D3095600CA0A90 /* NewUserViewController.swift */; };
-		CCF1A54322D40C0100CA0A90 /* HomeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1A54222D40C0100CA0A90 /* HomeAlert.swift */; };
 		CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +60,6 @@
 /* Begin PBXFileReference section */
 		72A677A722CF9D3800019EC6 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		72A677A922CFA1E800019EC6 /* SuccessNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessNode.swift; sourceTree = "<group>"; };
-		72A677AB22CFA4CA00019EC6 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		72A677AD22D0083200019EC6 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		72D1237622CBF8C800646B8B /* VisitedPaintingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedPaintingCell.swift; sourceTree = "<group>"; };
 		960057C822C584020006965D /* scavengARt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scavengARt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,11 @@
 		960057FF22C67C6E0006965D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9604182422D525640057AB93 /* firetest.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = firetest.scnp; sourceTree = "<group>"; };
 		9604182722D527930057AB93 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		CC32D1E222D7BA7000994618 /* HuntsNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntsNetworkingService.swift; sourceTree = "<group>"; };
+		CC32D1E422D7BAA000994618 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		CC32D1E822D7CD3200994618 /* CompletedHuntsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedHuntsViewController.swift; sourceTree = "<group>"; };
+		CC32D1EA22D8BA5E00994618 /* CompletedHuntCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedHuntCellTableViewCell.swift; sourceTree = "<group>"; };
+		CC32D1EC22D8CA5700994618 /* completedGameNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = completedGameNetworkingService.swift; sourceTree = "<group>"; };
 		CC363DE122D2C29E009E0B4E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC363DE322D2C705009E0B4E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CC363DE622D2C72E009E0B4E /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
@@ -87,7 +94,6 @@
 		CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		CCF1A53B22D3095600CA0A90 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
-		CCF1A54222D40C0100CA0A90 /* HomeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlert.swift; sourceTree = "<group>"; };
 		CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,29 +145,28 @@
 		960057CA22C584020006965D /* ARCapstone */ = {
 			isa = PBXGroup;
 			children = (
+				CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */,
 				960057CB22C584020006965D /* AppDelegate.swift */,
-				CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */,
+				960057CD22C584020006965D /* art.scnassets */,
+				960057CF22C584020006965D /* ARViewController.swift */,
+				960057D422C584040006965D /* Assets.xcassets */,
+				CC32D1E122D7B9BC00994618 /* Completed Hunts */,
+				CCB8A00622D62EF300EF7ABA /* cornerRadius.swift */,
+				CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */,
+				9604182422D525640057AB93 /* firetest.scnp */,
 				960057FF22C67C6E0006965D /* HomeViewController.swift */,
 				72A677A722CF9D3800019EC6 /* ImageDownloader.swift */,
-				960057CF22C584020006965D /* ARViewController.swift */,
 				960057FD22C6794A0006965D /* ImageInformationViewController.swift */,
-				72A677A922CFA1E800019EC6 /* SuccessNode.swift */,
-				9604182722D527930057AB93 /* star.png */,
-				9604182422D525640057AB93 /* firetest.scnp */,
-				72A677AD22D0083200019EC6 /* StatusViewController.swift */,
-				72D1237622CBF8C800646B8B /* VisitedPaintingCell.swift */,
-				72A677AB22CFA4CA00019EC6 /* UILabel+Extensions.swift */,
-				960057D122C584020006965D /* Main.storyboard */,
-				960057D622C584040006965D /* LaunchScreen.storyboard */,
 				960057D922C584040006965D /* Info.plist */,
-				960057D422C584040006965D /* Assets.xcassets */,
-				960057CD22C584020006965D /* art.scnassets */,
-				CCF1A53A22D3093800CA0A90 /* New User */,
+				960057D622C584040006965D /* LaunchScreen.storyboard */,
 				CC363DE522D2C70C009E0B4E /* Login */,
-				CCF1A53622D2EA1A00CA0A90 /* AlertService.swift */,
-				CCF1A54222D40C0100CA0A90 /* HomeAlert.swift */,
-				CCF1A53822D3010600CA0A90 /* DashboardViewController.swift */,
-				CCB8A00622D62EF300EF7ABA /* cornerRadius.swift */,
+				960057D122C584020006965D /* Main.storyboard */,
+				CCF9743522CACE0300F0ABEB /* MuseumViewController.swift */,
+				CCF1A53A22D3093800CA0A90 /* New User */,
+				9604182722D527930057AB93 /* star.png */,
+				72A677AD22D0083200019EC6 /* StatusViewController.swift */,
+				72A677A922CFA1E800019EC6 /* SuccessNode.swift */,
+				72D1237622CBF8C800646B8B /* VisitedPaintingCell.swift */,
 			);
 			path = ARCapstone;
 			sourceTree = "<group>";
@@ -182,6 +187,18 @@
 				960057EF22C584040006965D /* Info.plist */,
 			);
 			path = ARCapstoneUITests;
+			sourceTree = "<group>";
+		};
+		CC32D1E122D7B9BC00994618 /* Completed Hunts */ = {
+			isa = PBXGroup;
+			children = (
+				CC32D1E222D7BA7000994618 /* HuntsNetworkingService.swift */,
+				CC32D1EC22D8CA5700994618 /* completedGameNetworkingService.swift */,
+				CC32D1E422D7BAA000994618 /* Game.swift */,
+				CC32D1E822D7CD3200994618 /* CompletedHuntsViewController.swift */,
+				CC32D1EA22D8BA5E00994618 /* CompletedHuntCellTableViewCell.swift */,
+			);
+			path = "Completed Hunts";
 			sourceTree = "<group>";
 		};
 		CC363DE522D2C70C009E0B4E /* Login */ = {
@@ -339,23 +356,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCF1A53C22D3095600CA0A90 /* NewUserViewController.swift in Sources */,
+				CC32D1E922D7CD3200994618 /* CompletedHuntsViewController.swift in Sources */,
 				CC363DE422D2C705009E0B4E /* User.swift in Sources */,
+				CC32D1ED22D8CA5700994618 /* completedGameNetworkingService.swift in Sources */,
 				CCB8A00722D62EF300EF7ABA /* cornerRadius.swift in Sources */,
 				CCF1A53922D3010600CA0A90 /* DashboardViewController.swift in Sources */,
 				CC363DE222D2C29E009E0B4E /* LoginViewController.swift in Sources */,
+				CC32D1EB22D8BA5E00994618 /* CompletedHuntCellTableViewCell.swift in Sources */,
 				960057D022C584020006965D /* ARViewController.swift in Sources */,
-				72A677AC22CFA4CA00019EC6 /* UILabel+Extensions.swift in Sources */,
+				CC32D1E322D7BA7000994618 /* HuntsNetworkingService.swift in Sources */,
 				CC363DE722D2C72E009E0B4E /* NetworkingService.swift in Sources */,
 				72A677AE22D0083200019EC6 /* StatusViewController.swift in Sources */,
 				CCF1A53522D2E21800CA0A90 /* ErrorResponse.swift in Sources */,
 				960057FE22C6794A0006965D /* ImageInformationViewController.swift in Sources */,
 				72A677AA22CFA1E800019EC6 /* SuccessNode.swift in Sources */,
+				CC32D1E522D7BAA000994618 /* Game.swift in Sources */,
 				CCF9743622CACE0300F0ABEB /* MuseumViewController.swift in Sources */,
 				960057CC22C584020006965D /* AppDelegate.swift in Sources */,
 				CCF1A53322D2D13B00CA0A90 /* EntryViewController.swift in Sources */,
 				CCF1A53722D2EA1A00CA0A90 /* AlertService.swift in Sources */,
 				72D1237722CBF8C800646B8B /* VisitedPaintingCell.swift in Sources */,
-				CCF1A54322D40C0100CA0A90 /* HomeAlert.swift in Sources */,
 				72A677A822CF9D3800019EC6 /* ImageDownloader.swift in Sources */,
 				9600580022C67C6E0006965D /* HomeViewController.swift in Sources */,
 			);
