@@ -5,6 +5,9 @@ We wrote the front-end of our application in Swift using XCode, ARKit, UIKit, an
 
 Our team is comprised of Ahsun Kim, Rachel Reinauer, and Audra Kenney.
 
+Come watch our presentation here: https://youtu.be/c7Y94yohNec
+Come check out our splash page here: https://scavengealltheart.herokuapp.com
+
 ## Setup
 
 To look at the repo and run the project locally, you'll need to take the following steps:
